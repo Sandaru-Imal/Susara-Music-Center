@@ -82,7 +82,7 @@
                   </div>
                   <h5 class="text-center">DD-65</h5>
                   <h5 class="text-center">Price: $27.00</h5>
-                  <a href="#" class="btn buy">BUY</a>
+                  <a href="#" class="btn buy"><img src="{{asset("dist/img/buy-icon.png")}}" alt=""><strong>&nbsp;&nbsp;BUY</strong></a>
                 </div>
                 <!-- Product-1 End -->
 
@@ -98,7 +98,7 @@
                   </div>
                   <h5 class="text-center">DTX400K</h5>
                   <h5 class="text-center">Price: $27.00</h5>
-                  <a href="#" class="btn buy">BUY</a>
+                  <a href="#" class="btn buy"><img src="{{asset("dist/img/buy-icon.png")}}" alt=""><strong>&nbsp;&nbsp;BUY</strong></a>
                 </div>
                 <!-- Product-2 End -->
 
@@ -114,7 +114,7 @@
                   </div>
                   <h5 class="text-center">GM2FS</h5>
                   <h5 class="text-center">Price: $27.00</h5>
-                  <a href="#" class="btn buy">BUY</a>
+                  <a href="#" class="btn buy"><img src="{{asset("dist/img/buy-icon.png")}}" alt=""><strong>&nbsp;&nbsp;BUY</strong></a>
                 </div>
                 <!-- Product-3 End -->
 
@@ -130,7 +130,7 @@
                   </div>
                   <h5 class="text-center">Apple Watch</h5>
                   <h5 class="text-center">Price: $27.00</h5>
-                  <a href="#" class="btn buy">BUY</a>
+                  <a href="#" class="btn buy"><img src="{{asset("dist/img/buy-icon.png")}}" alt=""><strong>&nbsp;&nbsp;BUY</strong></a>
                 </div>
                 <!-- Product-4 End -->
 
@@ -138,7 +138,7 @@
                 <div class="col-md-4 product-grid">
                   <div class="image">
                     <a href="#">
-                      <img src="{{asset("dist/img/percussion-img/percussion-product-2.jpg")}}" alt="" class="w-100">
+                      <img src="{{asset("dist/img/percussion-img/percussion-product-1.jpg")}}" alt="" class="w-100">
                       <div class="overlay">
                         <div class="detail">View Details</div>
                       </div>
@@ -146,7 +146,7 @@
                   </div>
                   <h5 class="text-center">Apple Watch</h5>
                   <h5 class="text-center">Price: $27.00</h5>
-                  <a href="#" class="btn buy">BUY</a>
+                  <a href="#" class="btn buy"><img src="{{asset("dist/img/buy-icon.png")}}" alt=""><strong>&nbsp;&nbsp;BUY</strong></a>
                 </div>
                 <!-- Product-5 End -->
               </div>

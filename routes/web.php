@@ -17,6 +17,8 @@ Route::get('/', function () {
  Route::get('/percution', 'FrontController@percution' )->name('percution');;
  Route::get('/dd65', 'FrontController@percution_dd65' );
 
+ Route::get('/add-to-cart/{id}', '');
+
 
 Auth::routes();
 

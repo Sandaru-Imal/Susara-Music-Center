@@ -84,8 +84,8 @@
                   <div class="product-price">
                     <span>Price: 148$</span>
                   </div><br>
-                  <a href="#"><button type="button" class="btn btn-outline-primary btn-lg">Buy Now</button></a>&nbsp;
-                  <a href="#"><button type="button" class="btn btn-outline-success btn-lg">Add to Cart</button></a>
+                  <a href="#"><button type="button" class="btn btn-outline-primary btn-lg"><img src="{{asset("dist/img/buy.png")}}" alt=""> Buy Now</button></a>&nbsp;
+                  <a href="#"><button type="button" class="btn btn-outline-success btn-lg"><img src="{{asset("dist/img/cart-icon.png")}}" alt=""> Add to Cart</button></a>
                   <br>
                   <br>
                   <ul class="nav nav-tabs" id="myTab" role="tablist">
