@@ -69,88 +69,30 @@
                         <!--carousel-->
             <div class="container">
               <h1 class="text-center">Percution Products</h1><br>
+              @foreach($products->chunk(3) as $productChunk)
               <div class="row">
                 <!-- Product-1 Start -->
+                @foreach($productChunk as $product)
                 <div class="col-md-4 product-grid">
                   <div class="image">
                     <a href="#">
-                      <img src="{{asset("dist/img/percussion-img/percussion-product-1.jpg")}}" alt="" class="w-100">
+                      <img src="{{ $product->imagepath }}" alt="" class="w-100">
                       <div class="overlay">
                         <a href="{{url("/dd65")}}"><div class="detail">View Details</div></a>
                       </div>
                     </a>
                   </div>
-                  <h5 class="text-center">DD-65</h5>
-                  <h5 class="text-center">Price: $27.00</h5>
-                  <a href="#" class="btn buy"><img src="{{asset("dist/img/buy-icon.png")}}" alt=""><strong>&nbsp;&nbsp;BUY</strong></a>
+                  <h5 class="text-center">{{ $product->productname }}</h5>
+                  <h5 class="text-center">Price: $ {{ $product->price }}</h5>
+                  <div class="btn">
+                      <a href="#"><button type="button" class="btn btn-outline-primary btn-sm"><img src="{{asset("dist/img/buy.png")}}" alt=""> Buy Now</button></a>&nbsp;&nbsp;
+                      <a href="#"><button type="button" class="btn btn-outline-success btn-sm"><img src="{{asset("dist/img/cart-icon.png")}}" alt=""> Add to Cart</button></a>
+                  </div>
                 </div>
+                @endforeach
                 <!-- Product-1 End -->
-
-                <!-- Product-2 Start -->
-                <div class="col-md-4 product-grid">
-                  <div class="image">
-                    <a href="#">
-                      <img src="{{asset("dist/img/percussion-img/percussion-product-2.jpg")}}" alt="" class="w-100">
-                      <div class="overlay">
-                        <div class="detail">View Details</div>
-                      </div>
-                    </a>
-                  </div>
-                  <h5 class="text-center">DTX400K</h5>
-                  <h5 class="text-center">Price: $27.00</h5>
-                  <a href="#" class="btn buy"><img src="{{asset("dist/img/buy-icon.png")}}" alt=""><strong>&nbsp;&nbsp;BUY</strong></a>
-                </div>
-                <!-- Product-2 End -->
-
-                <!-- Product-3 Start -->
-                <div class="col-md-4 product-grid">
-                  <div class="image">
-                    <a href="#">
-                      <img src="{{asset("dist/img/percussion-img/percussion-product-3.jpg")}}" alt="" class="w-100">
-                      <div class="overlay">
-                        <div class="detail">View Details</div>
-                      </div>
-                    </a>
-                  </div>
-                  <h5 class="text-center">GM2FS</h5>
-                  <h5 class="text-center">Price: $27.00</h5>
-                  <a href="#" class="btn buy"><img src="{{asset("dist/img/buy-icon.png")}}" alt=""><strong>&nbsp;&nbsp;BUY</strong></a>
-                </div>
-                <!-- Product-3 End -->
-
-                <!-- Product-4 Start -->
-                <div class="col-md-4 product-grid">
-                  <div class="image">
-                    <a href="#">
-                      <img src="{{asset("dist/img/percussion-img/percussion-product-2.jpg")}}" alt="" class="w-100">
-                      <div class="overlay">
-                        <div class="detail">View Details</div>
-                      </div>
-                    </a>
-                  </div>
-                  <h5 class="text-center">Apple Watch</h5>
-                  <h5 class="text-center">Price: $27.00</h5>
-                  <a href="#" class="btn buy"><img src="{{asset("dist/img/buy-icon.png")}}" alt=""><strong>&nbsp;&nbsp;BUY</strong></a>
-                </div>
-                <!-- Product-4 End -->
-
-                <!-- Product-5 Start -->
-                <div class="col-md-4 product-grid">
-                  <div class="image">
-                    <a href="#">
-                      <img src="{{asset("dist/img/percussion-img/percussion-product-1.jpg")}}" alt="" class="w-100">
-                      <div class="overlay">
-                        <div class="detail">View Details</div>
-                      </div>
-                    </a>
-                  </div>
-                  <h5 class="text-center">Apple Watch</h5>
-                  <h5 class="text-center">Price: $27.00</h5>
-                  <a href="#" class="btn buy"><img src="{{asset("dist/img/buy-icon.png")}}" alt=""><strong>&nbsp;&nbsp;BUY</strong></a>
-                </div>
-                <!-- Product-5 End -->
               </div>
-
+              @endforeach
             </div>
             <!--carousel end -->
 

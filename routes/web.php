@@ -10,14 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('susaratemp-home');
- });
+// Route::get('/', function () {
+//     return view('susaratemp-home');
+//  });
  Route::get('/', 'FrontController@index' )->name('home');
- Route::get('/percution', 'FrontController@percution' )->name('percution');;
+ Route::get('/percution', 'FrontController@percution' )->name('percution');
+ Route::get('/percution', [
+   'uses' => 'ProductController@getIndex',
+   'as' => 'products.percution'
+ ]);
  Route::get('/dd65', 'FrontController@percution_dd65' );
 
- Route::get('/add-to-cart/{id}', '');
+ Route::get('/add-to-cart/{id}', [
+   'uses' => 'ProductController@getAddTocart',
+   'as' => 'products.addToCart'
+ ]);
 
 
 Auth::routes();
