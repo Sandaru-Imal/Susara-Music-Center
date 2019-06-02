@@ -69,10 +69,9 @@
                         <!--carousel-->
             <div class="container">
               <h1 class="text-center">Percution Products</h1><br>
-              @foreach($products->chunk(3) as $productChunk)
               <div class="row">
                 <!-- Product-1 Start -->
-                @foreach($productChunk as $product)
+                @foreach($products as $product)
                 <div class="col-md-4 product-grid">
                   <div class="image">
                     <a href="#">
@@ -92,7 +91,6 @@
                 @endforeach
                 <!-- Product-1 End -->
               </div>
-              @endforeach
             </div>
             <!--carousel end -->
 
