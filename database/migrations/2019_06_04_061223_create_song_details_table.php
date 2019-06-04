@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStocksTable extends Migration
+class CreateSongDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateStocksTable extends Migration
      */
     public function up()
     {
-        Schema::create('stocks', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('Instrument_Name');
-            $table->boolean('IsAvailable')->default(1);
-            $table->Double('Price');
-            $table->timestamps();
+        Schema::create('song_details', function (Blueprint $table) {
+            $table->integer('songId')->unsigned();
+			$table->primary('songId');
+            $table->string('songName');
+            $table->string('lyrics');
         });
     }
 
@@ -29,6 +28,6 @@ class CreateStocksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stocks');
+        Schema::dropIfExists('song_details');
     }
 }
