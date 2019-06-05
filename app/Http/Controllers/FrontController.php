@@ -10,7 +10,7 @@ class FrontController extends Controller
       return view('front.home');
     }
     public function percution(){
-      return view('products.percution');
+      return view('instruments.percution');
     }
     public function percution_dd65(){
       return view('percussion.dd65');
