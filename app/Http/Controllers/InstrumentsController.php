@@ -12,10 +12,10 @@ class InstrumentsController extends Controller
 {
     public function getIndex(){
 
-      // $products = Product::all();
-      $products = DB::select("select * from products where productname='DD-65'");
+      $products = Instruments::all();
+      // $products = DB::select("select * from products where productname='DD-65'");
       // return $products;
-      return view('products.percution', ['products' => $products]);
+      return view('instrument.percution', ['instruments' => $products]);
       // return view('products.percution')->with('products', $products);
     }
 

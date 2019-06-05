@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 05, 2019 at 05:21 AM
+-- Generation Time: Jun 05, 2019 at 07:42 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -196,8 +196,21 @@ CREATE TABLE IF NOT EXISTS `instruments` (
   `instrumentName` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `imagepath` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`instrumentId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `instruments`
+--
+
+INSERT INTO `instruments` (`instrumentId`, `instrumentName`, `description`, `imagepath`, `created_at`, `updated_at`) VALUES
+(61, 'DD-65', 'Designed from a drummers point of view, the DD-65 features eight touch-sensitive pads, 2 drum pedals and AUX IN for playing along with your favorite MP3 player.', 'dist/img/percussion-img/percussion-product-1.jpg', '2019-06-05 02:11:44', '2019-06-05 02:11:44'),
+(62, 'DD-65', 'Designed from a drummers point of view, the DD-65 features eight touch-sensitive pads, 2 drum pedals and AUX IN for playing along with your favorite MP3 player.', 'dist/img/percussion-img/percussion-product-1.jpg', '2019-06-05 02:11:44', '2019-06-05 02:11:44'),
+(63, 'GM2FS', 'Gigmaker drum sets are available in two basic configurations and a range of colorful sparkle finishes that you can choose to match your musical and visual style.', 'dist/img/percussion-img/percussion-product-3.jpg', '2019-06-05 02:11:44', '2019-06-05 02:11:44'),
+(64, 'DTX400K', 'The DTX400K features 10 legendary drum kits and training functions plus newly developed drum pads, large cymbals and new silent kick unit.', 'dist/img/percussion-img/percussion-product-2.jpg', '2019-06-05 02:11:44', '2019-06-05 02:11:44'),
+(65, 'DD-65', 'Designed from a drummers point of view, the DD-65 features eight touch-sensitive pads, 2 drum pedals and AUX IN for playing along with your favorite MP3 player.', 'dist/img/percussion-img/percussion-product-1.jpg', '2019-06-05 02:11:44', '2019-06-05 02:11:44');
 
 -- --------------------------------------------------------
 

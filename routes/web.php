@@ -17,13 +17,13 @@
  Route::get('/percution', 'FrontController@percution' )->name('percution');
  Route::get('/percution', [
    'uses' => 'InstrumentsController@getIndex',
-   'as' => 'instruments.percution'
+   'as' => 'instrument.percution'
  ]);
  Route::get('/dd65', 'FrontController@percution_dd65' );
 
  Route::get('/add-to-cart/{id}', [
    'uses' => 'InstrumentsController@getAddTocart',
-   'as' => 'instruments.addToCart'
+   'as' => 'instrument.addToCart'
  ]);
 
 
