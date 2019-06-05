@@ -21,8 +21,8 @@
  ]);
  Route::get('/dd65', 'FrontController@percution_dd65' );
 
- Route::get('/add-to-cart/{id}', [
-   'uses' => 'InstrumentsController@getAddTocart',
+ Route::get('/add-to-cart/{instrumentId}', [
+   'uses' => 'InstrumentsController@getAddToCart',
    'as' => 'instrument.addToCart'
  ]);
 

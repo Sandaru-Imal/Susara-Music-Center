@@ -71,18 +71,18 @@
               <h1 class="text-center">Percution Products</h1><br>
               <div class="row">
                 <!-- Product-1 Start -->
-                @foreach($products as $product)
+                @foreach($instruments as $instrument)
                 <div class="col-md-4 product-grid">
                   <div class="image">
                     <a href="#">
-                      <img src="{{ $product->imagepath }}" alt="" class="w-100">
+                      <img src="{{ $instrument->imagepath }}" alt="" class="w-100">
                       <div class="overlay">
                         <a href="{{url("/dd65")}}"><div class="detail">View Details</div></a>
                       </div>
                     </a>
                   </div>
-                  <h5 class="text-center">{{ $product->productname }}</h5>
-                  <h5 class="text-center">Price: $ {{ $product->price }}</h5>
+                  <h5 class="text-center">{{ $instrument->instrumentName }}</h5>
+                  <!-- <h5 class="text-center">Price: $ {{ $instrument->price }}</h5> -->
                   <div class="btn">
                       <a href="#"><button type="button" class="btn btn-outline-primary btn-sm"><img src="{{asset("dist/img/buy.png")}}" alt=""> Buy Now</button></a>&nbsp;&nbsp;
                       <a href="#"><button type="button" class="btn btn-outline-success btn-sm"><img src="{{asset("dist/img/cart-icon.png")}}" alt=""> Add to Cart</button></a>
