@@ -33,7 +33,7 @@
                                                         <a href="{{ route('register') }}" class="list-group-item" data-parent="#menu1sub1"  data-toggle="modal" data-target="#exampleModal">Customer</a>
                                                         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></button> -->
 
-                                                        <a href="#" class="list-group-item" data-parent="#menu1sub1">Student</a>
+                                                        <!-- <a href="#" class="list-group-item" data-parent="#menu1sub1">Student</a> -->
 
                                                     </div>
 
