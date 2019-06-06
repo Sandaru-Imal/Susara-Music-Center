@@ -54,7 +54,11 @@
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="d-none d-md-inline">Events</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Add</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Add</span></a>
-                        <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-star"></i> <span class="d-none d-md-inline">Add</span></a>
+                        <!-- Shopping Cart Link-->
+                        <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar">
+                          <i class="fa fa-shopping-cart"></i> Shopping Cart
+                          <span class="d-none d-md-inline">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+                        </a>
                     </div>
                 </div>
                 <main class="col-md-10 col px-5 pl-md-2 pt-2 main mx-auto">
@@ -101,7 +105,7 @@
                         </div>
 
                         <div class="carousel-item" data-interval="5000">
-                            <img src="img/3.png" class="d-block w-100" alt="...">
+                            <img src="{{("dis/img/3.png")}}" class="d-block w-100" alt="...">
                             <div class="carousel-caption">
                                 <h4>CHOICE</h4>
                                 <p>Your all choice is our responsibility</p>

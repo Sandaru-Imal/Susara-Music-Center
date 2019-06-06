@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Instruments;
+use App\Cart;
 use DB;
 use Illuminate\Http\Request;
 use Session;
@@ -26,9 +27,9 @@ class InstrumentsController extends Controller
       $cart->add($instrument,$instrument->instrumentId);
 
       $request->session()->put('cart', $cart);
-      dd($request->session()->get('cart'));
+      dd($request->session()->get('cart'));//to show data in browser
       return redirect()->route('instrument.percution');
-
     }
+    
 
 }

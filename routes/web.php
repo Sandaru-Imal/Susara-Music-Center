@@ -26,6 +26,11 @@
    'uses' => 'InstrumentsController@getAddToCart',
    'as' => 'instrument.addToCart'
  ]);
+//Cart route and link to CartController
+ Route::get('/shopping-cart', [
+   'uses' => 'CartController@getCart',
+   'as' => 'shop.shoppingCart'
+ ]);
 
 
 Auth::routes();
