@@ -58,6 +58,11 @@ return [
             'provider' => 'admins',
             'hash' => false,
         ],
+
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'customers',
+        ],
     ],
 
     /*
@@ -77,6 +82,8 @@ return [
     |
     */
 //provider provides ways to interact with the datbase
+    
+
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
@@ -86,6 +93,11 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
+        ],
+
+        'customers' => [
+            'driver' => 'eloquent',
+            'model' => App\Customer::class,
         ],
 
         

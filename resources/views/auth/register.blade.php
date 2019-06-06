@@ -26,6 +26,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="userId" class="col-md-4 col-form-label text-md-right">{{ __('User Id') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="userId" type="text" class="form-control @error('userId') is-invalid @enderror" name="userId" value="{{ old('userId') }}" required autocomplete="userId" autofocus>
+
+                                @error('userId')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="fname" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
 
                             <div class="col-md-6">
@@ -53,7 +67,7 @@
                             </div>
                         </div>
 
-                        <!-- <div class="form-group row">
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -65,7 +79,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div> -->
+                        </div>
 
                         <div class="form-group row">
                             <label for="phoneNo" class="col-md-4 col-form-label text-md-right">{{ __('Mobile Number') }}</label>
