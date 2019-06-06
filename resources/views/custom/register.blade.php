@@ -33,6 +33,11 @@
                 <div class="form-content">
                     <div class="row">
                         <div class="col-md-8">
+
+                        <div class="form-group">
+                                <input type="text" class="form-control" name="customerId" placeholder="CustomerId *" value="{{old('customerId')}}" />
+                            </div>
+
                             <div class="form-group">
                                 <input type="text" class="form-control" name="fname" placeholder="First Name *" value="{{old('fname')}}" />
                             </div>
@@ -46,6 +51,18 @@
 
                             <div class="form-group">
                                 <input type="text" class="form-control" name="mobile" placeholder="Mobile No*" value="{{old('mobile')}}" />
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="no" placeholder="Home NO*" value="{{old('no')}}" />
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="street" placeholder="street*" value="{{old('street')}}" />
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="city" placeholder="city*" value="{{old('city')}}" />
                             </div>
 
                             <div class="form-group">
