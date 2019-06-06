@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Instruments;
 use DB;
 use Illuminate\Http\Request;
+use Session;
 
 // use App\Http\Request;
 
@@ -20,6 +21,13 @@ class InstrumentsController extends Controller
     }
     public function getAddToCart(Request $request, $instrumentId){
       $instrument = Instruments::find($instrumentId);
+      $oldCart = Session::has('cart') ? Session::get('cart') : null;
+      $cart = new Cart($oldCart);
+      $cart->add($instrument,$instrument->instrumentId);
+
+      $request->session()->put('cart', $cart);
+      dd($request->session()->get('cart'));
+      return redirect()->route('instrument.percution');
 
     }
 
