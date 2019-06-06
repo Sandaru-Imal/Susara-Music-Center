@@ -1,6 +1,6 @@
 @extends('layout.main')
 
-@section('title', 'Percussion Products')
+@section('title', 'Shopping Cart')
 
 @section('content')
   @if(Session::has('cart'))
