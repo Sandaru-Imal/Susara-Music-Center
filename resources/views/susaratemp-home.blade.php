@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/sidenav.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Susara Music Center</title>
+    <title>Susara Music</title>
 </head>
 <body>
 
@@ -310,7 +310,7 @@
       </div>
       <div class="modal-body">
         <!-- <form class="form-horizontal " action="{{route('custom.register')}}" method="post"> -->
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('custom.register') }}">
                 @csrf
                 <div class="form-content">
                     <div class="row">

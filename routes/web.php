@@ -10,9 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/', function () {
-//     return view('susaratemp-home');
-//  });
+Route::get('/home2', function () {
+    return view('susaratemp-home');
+ });
  Route::get('/', 'FrontController@index' )->name('home');
  Route::get('/percution', 'FrontController@percution' )->name('percution');
  Route::get('/percution', [
