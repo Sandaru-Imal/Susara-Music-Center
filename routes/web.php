@@ -17,6 +17,7 @@
  Route::get('/percution', 'FrontController@percution' )->name('percution');
  Route::get('/percution', [
    'uses' => 'InstrumentsController@getIndex',
+   // 'uses' => 'Instruments_exController@getIndex',
    'as' => 'instrument.percution'
  ]);
  Route::get('/dd65', 'FrontController@percution_dd65' );

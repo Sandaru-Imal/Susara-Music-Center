@@ -13,9 +13,9 @@ class CreateInstrumentsExTable extends Migration
      */
     public function up()
     {
-        Schema::create('instrument_ex', function (Blueprint $table) {
+        Schema::create('instruments_ex', function (Blueprint $table) {
             $table->integer('instrumentId')->unsigned();
-			$table->primary('instrumentId');
+			      $table->primary('instrumentId');
             $table->string('category');
             $table->double('price');
             $table->integer('adminId')->unsigned();
@@ -30,6 +30,6 @@ class CreateInstrumentsExTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('instruments_exes');
+        Schema::dropIfExists('instrument_ex');
     }
 }

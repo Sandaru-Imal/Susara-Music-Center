@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 05, 2019 at 07:42 AM
+-- Generation Time: Jun 06, 2019 at 06:58 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -229,15 +229,17 @@ CREATE TABLE IF NOT EXISTS `instruments_customers` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `instrument_ex`
+-- Table structure for table `instruments_ex`
 --
 
-DROP TABLE IF EXISTS `instrument_ex`;
-CREATE TABLE IF NOT EXISTS `instrument_ex` (
+DROP TABLE IF EXISTS `instruments_ex`;
+CREATE TABLE IF NOT EXISTS `instruments_ex` (
   `instrumentId` int(10) UNSIGNED NOT NULL,
   `category` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` double NOT NULL,
   `adminId` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`instrumentId`),
   KEY `instrument_ex_adminid_foreign` (`adminId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -630,9 +632,9 @@ ALTER TABLE `instruments_customers`
   ADD CONSTRAINT `instruments_customers_instrumentid_foreign` FOREIGN KEY (`instrumentId`) REFERENCES `instruments` (`instrumentId`);
 
 --
--- Constraints for table `instrument_ex`
+-- Constraints for table `instruments_ex`
 --
-ALTER TABLE `instrument_ex`
+ALTER TABLE `instruments_ex`
   ADD CONSTRAINT `instrument_ex_adminid_foreign` FOREIGN KEY (`adminId`) REFERENCES `admins` (`adminId`);
 
 --

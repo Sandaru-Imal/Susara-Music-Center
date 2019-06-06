@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class instruments_ex extends Model
+class Instruments_ex extends Model
 {
-    //
+    protected $fillable = ['instrumentId', 'category', 'price', 'adminId'];
 }
