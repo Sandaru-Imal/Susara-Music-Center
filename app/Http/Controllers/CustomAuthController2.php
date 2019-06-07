@@ -29,8 +29,11 @@ class CustomAuthController2 extends Controller
         return $this->validate($request,[
             'fname' => 'required|max:225',
             'lname' => 'required|max:225',
-            // 'email' => 'required|email|unique:users|max:225',
+            'email' => 'required|email|unique:customers|max:225',
             'mobile' => 'required|max:10',
+            'no' => 'required|max:225',
+            'street' => 'required|max:225',
+            'city' => 'required|max:225',
             'password' => 'required|confirmed|max:225',
         ]);
 

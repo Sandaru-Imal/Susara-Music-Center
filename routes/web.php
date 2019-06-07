@@ -41,7 +41,7 @@ Route::get('/home2', function () {
   // Route::post('form-validation', 'CheckoutController@formValidationPost');
 
 
-Auth::routes();
+Auth::routes(); 
 
 Route::get('/home', 'HomeController@index');
 Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
