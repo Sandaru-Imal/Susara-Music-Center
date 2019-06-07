@@ -136,6 +136,7 @@
                                       <div class="col-md-6 mb-3">
                                         <label for="firstName">First name</label>
                                         <input type="text" class="form-control" id="firstName" placeholder="First Name" value="" required="">
+                                        <div class="valid-feedback">Valid</div>
                                         <div class="invalid-feedback">
                                           Valid first name is required.
                                         </div>
@@ -168,6 +169,11 @@
                                     <div class="mb-3">
                                       <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
                                       <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                                    </div>
+
+                                    <div class="mb-3">
+                                      <label for="contact-no">Contact No</label>
+                                      <input type="tel" class="form-control" id="contact-no" placeholder="076-5555555">
                                     </div>
 
                                     <div class="row">
@@ -244,6 +250,11 @@
                                         <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
                                       </div>
 
+                                      <div class="mb-3">
+                                        <label for="contact-no">Contact No</label>
+                                        <input type="tel" class="form-control" id="contact-no" placeholder="076-5555555">
+                                      </div>
+
                                       <div class="row">
                                         <div class="col-md-5 mb-3">
                                           <label for="country">Country</label>
@@ -279,11 +290,15 @@
                                     <hr class="mb-4">
                                     <div class="custom-control custom-checkbox">
                                       <input type="checkbox" class="custom-control-input" id="same-address">
-                                      <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                                      <label class="custom-control-label" for="same-address">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shipping address is the same as my billing address
+                                      </label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                       <input type="checkbox" class="custom-control-input" id="save-info">
-                                      <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                                      <label class="custom-control-label" for="save-info">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Save this information for next time
+                                      </label>
                                     </div>
                                     <hr class="mb-4">
 
@@ -292,15 +307,21 @@
                                     <div class="d-block my-3">
                                       <div class="custom-control custom-radio">
                                         <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-                                        <label class="custom-control-label" for="credit">Credit card</label>
+                                        <label class="custom-control-label" for="credit">
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Credit card
+                                        </label>
                                       </div>
                                       <div class="custom-control custom-radio">
                                         <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                                        <label class="custom-control-label" for="debit">Debit card</label>
+                                        <label class="custom-control-label" for="debit">
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Debit card
+                                        </label>
                                       </div>
                                       <div class="custom-control custom-radio">
                                         <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                                        <label class="custom-control-label" for="paypal">Paypal</label>
+                                        <label class="custom-control-label" for="paypal">
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Paypal
+                                        </label>
                                       </div>
                                     </div>
                                     <div class="row">
@@ -323,21 +344,21 @@
                                     <div class="row">
                                       <div class="col-md-3 mb-3">
                                         <label for="cc-expiration">Expiration</label>
-                                        <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                                        <input type="text" class="form-control" id="cc-expiration" placeholder="MM / YYYY" required="">
                                         <div class="invalid-feedback">
                                           Expiration date required
                                         </div>
                                       </div>
                                       <div class="col-md-3 mb-3">
                                         <label for="cc-expiration">CVV</label>
-                                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                                        <input type="text" class="form-control" id="cc-cvv" placeholder="CVV" required="">
                                         <div class="invalid-feedback">
                                           Security code required
                                         </div>
                                       </div>
                                     </div>
                                     <hr class="mb-4">
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                                    <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm & Pay</button>
                                   </form>
                                   <!-- Shipping Address End -->
                                 </div>
