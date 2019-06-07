@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/sidenav.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/loginNew.css">
     <title>Susara Music</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
                                         aria-expanded="false"><i class="fa fa-user-circle-o"></i> <span class="d-none d-md-inline">Join</span> </a>
 
                                         <div class="collapse" id="menu">
-                                                <a href="{{ route('login') }}" class="list-group-item" data-parent="#menu1">Login</a>
+                                                <a href="{{ route('login') }}" class="list-group-item" data-parent="#menu1" data-toggle="modal" data-target="#elegantModalForm">Login</a>
 
                                                 <a href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Sign-up</a>
                                                     <div class="collapse" id="menu1sub1">
@@ -282,23 +283,7 @@
                                       <!-- Footer -->
                             </div>
 
-
-
-
-
-
-
-
-                   </div>
-                        </main>
-                    </div>
-
-                </div><!--side bar -->
-
-
-
-                <!-- registration form -->
-
+                            <!-- registration form -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -309,12 +294,16 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- <form class="form-horizontal " action="{{route('custom.register')}}" method="post"> -->
-        <form method="POST" action="{{ route('custom.register') }}">
+      <form class="form-horizontal " action="{{route('custom.register')}}" method="post">
                 @csrf
                 <div class="form-content">
                     <div class="row">
                         <div class="col-md-8">
+
+                             <!-- <div class="form-group">
+                                <input type="text" class="form-control" name="customerId" placeholder="CustomerId*" value="{{old('customerId')}}" />
+                            </div> -->
+
                             <div class="form-group">
                                 <input type="text" class="form-control" name="fname" placeholder="First Name *" value="{{old('fname')}}" />
                             </div>
@@ -331,12 +320,24 @@
                             </div>
 
                             <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Home No"  name="no" value="{{old('no')}}" name="no" />
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Street *"  name="street"  value="{{old('street')}}"/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="City *"  value="{{old('city')}}"  name="city"/>
+                            </div>
+
+                            <div class="form-group">
                                 <input type="password" class="form-control" placeholder="Password *" value="" name="password"/>
                             </div>
+
                             <div class="form-group">
                                 <input type="password" class="form-control" placeholder="Confirm Password *" value="" name="password_confirmation"/>
                             </div>
-
                         </div>
                         <div class="col-md-6">
 
@@ -345,25 +346,90 @@
                     <button type="submit" class=" btn btn-primary btn-block">Register</button>
 
                 </div>
-                </form>
+            </form>
     </div>
   </div>
 </div>
+              <!-- end of registration form -->
 
-              <div class="form">
-                  <div class="note">
-                      <p>User Registration</p>
-                  </div>
-                  @if(count($errors)>0)
-                      @foreach($errors->all() as $error)
-                          <p class="alert alert-danger">
-                              {{$error}}
-                          </p>
-                      @endforeach
-                  @endif
-
-              </div>
+              <!-- Login form -->
+        <!-- Modal -->
+<div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <!--Content-->
+    <div class="modal-content form-elegant">
+      <!--Header-->
+      <div class="modal-header text-center">
+        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign in</strong></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mx-4">
+        <!--Body-->
+        <div class="md-form mb-5">
+          <input type="email" id="Form-email1" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="Form-email1">Your email</label>
         </div>
+
+        <div class="md-form pb-3">
+          <input type="password" id="Form-pass1" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="Form-pass1">Your password</label>
+          <p class="font-small blue-text d-flex justify-content-end">Forgot <a href="#" class="blue-text ml-1">
+              Password?</a></p>
+        </div>
+
+        <div class="text-center mb-3">
+          <button type="button" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Sign in</button>
+        </div>
+        <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in
+          with:</p>
+
+        <div class="row my-3 d-flex justify-content-center">
+          <!--Facebook-->
+          <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-facebook-f text-center"></i></button>
+          <!--Twitter-->
+          <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-twitter"></i></button>
+          <!--Google +-->
+          <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fab fa-google-plus-g"></i></button>
+        </div>
+      </div>
+      <!--Footer-->
+      <div class="modal-footer mx-5 pt-3 mb-1">
+        <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="#" class="blue-text ml-1">
+            Sign Up</a></p>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Modal -->
+              <!-- end of login form -->
+
+</div>
+  <main class="py-4">
+     @yield('content')
+  </main>
+</div>
+
+  </div><!--side bar -->
+
+                <div class="form">
+                    <div class="note">
+                        <p>User Registration</p>
+                    </div>
+                    @if(count($errors)>0)
+                        @foreach($errors->all() as $error)
+                            <p class="alert alert-danger">
+                                {{$error}}
+                            </p>
+                        @endforeach
+                    @endif
+
+                </div>
+          </div>
 
 
 </div>
