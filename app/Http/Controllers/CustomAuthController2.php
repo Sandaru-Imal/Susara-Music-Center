@@ -8,45 +8,19 @@ use App\Customer;
 class CustomAuthController2 extends Controller
 {
 
-    public function customerId(Request $request){
-        $customerId = 0;
-        foreach ($data as $key => $value){
-        
-            $i++;
-            echo '<div id="box' . $i . '">';
-        
-        }
-
-    }
     
     public function register2(Request $request){
-
-
-        
-
-
-        // $customer = new Customer; 
-        // $customer->customerId=1;
-        
-
-        // $this -> validation($request);
-        // Customer::create($request,[
-        //     'customerId','fname','lname','no','street','city'
-        // ]);
-
         $customer = new Customer();
-        $customer->customerId =3;
+
+        $customerId = Customer::pluck('customerId')->last();
+        $customer->customerId = $customerId + 1;
         $customer->fname = $request['fname'];
         $customer->lname = $request['lname'];
         $customer->no = $request['no'];
         $customer->street = $request['street'];
         $customer->city = $request['city'];
-        // $customer->password = hash('sha512', $request['password']);
         $customer->save();
-
-        
-        return redirect('userDashboard');
-        
+        return redirect('userDashboard');  
     }
 
     public function validation($request){
@@ -62,4 +36,3 @@ class CustomAuthController2 extends Controller
 
     }
 }
-

@@ -12,6 +12,8 @@ class Customer extends Model
 
     public $timestamps = false;
     use Notifiable;
+    protected $primaryKey = 'customerId';
+    public $incrementing = true;
 
     /**
      * The attributes that are mass assignable.
@@ -40,4 +42,3 @@ class Customer extends Model
         // 'email_verified_at' => 'datetime',
     ];
 }
-
