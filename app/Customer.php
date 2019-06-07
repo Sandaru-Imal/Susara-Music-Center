@@ -7,11 +7,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Customer extends Model
+class Customer extends Authenticatable
 {
 
     public $timestamps = false;
     use Notifiable;
+    protected $primaryKey = 'customerId';
+    public $incrementing = true;
 
     /**
      * The attributes that are mass assignable.
@@ -28,7 +30,7 @@ class Customer extends Model
      * @var array
      */
     protected $hidden = [
-        // 'password', 'remember_token',
+        'password',
     ];
 
     /**
@@ -37,7 +39,6 @@ class Customer extends Model
      * @var array
      */
     protected $casts = [
-        // 'email_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime',
     ];
 }
-

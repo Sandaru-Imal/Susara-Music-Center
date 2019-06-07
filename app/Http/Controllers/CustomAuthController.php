@@ -1,8 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
+use App\Customer;
+//form field validation
+use Validator;
 
+//user details authentication
+use Auth;
 use Illuminate\Http\Request;
 
 class CustomAuthController extends Controller
