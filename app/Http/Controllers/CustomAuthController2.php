@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Customer;
+//form field validation
+use Validator;
 
+//user details authentication
+use Auth;
 
 class CustomAuthController2 extends Controller
 {
