@@ -131,7 +131,7 @@
                                 <div class="col-md-8 order-md-1">
                                   <!-- Billing Address Start -->
                                   <h4 class="mb-3">Billing address</h4>
-                                  <form class="needs-validation" novalidate="">
+                                  <form class="needs-validation" novalidate="" id="checkout-form">
                                     <div class="row">
                                       <div class="col-md-6 mb-3">
                                         <label for="firstName">First name</label>
@@ -150,9 +150,10 @@
                                       </div>
                                     </div>
 
+                                    <!-- Email -->
                                     <div class="mb-3">
                                       <label for="email">Email</label>
-                                      <input type="email" class="form-control" id="email" placeholder="you@example.com" required="">
+                                      <input type="email" class="form-control" id="email" placeholder="you@example.com" maxlength="65"required="">
                                       <div class="invalid-feedback">
                                         Please enter a valid email address for shipping updates.
                                       </div>
@@ -201,7 +202,7 @@
                                       </div>
                                       <div class="col-md-3 mb-3">
                                         <label for="zip">Zip</label>
-                                        <input type="text" class="form-control" id="zip" placeholder="postal code" required="">
+                                        <input type="text" class="form-control" id="zip" placeholder="postal code" maxlength="9" required="">
                                         <div class="invalid-feedback">
                                           Zip code required.
                                         </div>
@@ -231,7 +232,7 @@
 
                                       <div class="mb-3">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="you@example.com" required="">
+                                        <input type="email" class="form-control" id="email" placeholder="you@example.com" maxlength="65" required="">
                                         <div class="invalid-feedback">
                                           Please enter a valid email address for shipping updates.
                                         </div>
@@ -280,7 +281,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3">
                                           <label for="zip">Zip</label>
-                                          <input type="text" class="form-control" id="zip" placeholder="postal code" required="">
+                                          <input type="text" class="form-control" id="zip" placeholder="postal code" maxlength="9" required="">
                                           <div class="invalid-feedback">
                                             Zip code required.
                                           </div>
@@ -325,17 +326,19 @@
                                       </div>
                                     </div>
                                     <div class="row">
+                                      <!-- Card Holder Name -->
                                       <div class="col-md-6 mb-3">
                                         <label for="cc-name">Name on card</label>
-                                        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                                        <input type="text" class="form-control" id="cc-name" placeholder="" maxlength="70" required="">
                                         <small class="text-muted">Full name as displayed on card</small>
                                         <div class="invalid-feedback">
                                           Name on card is required
                                         </div>
                                       </div>
+                                      <!-- Card Number -->
                                       <div class="col-md-6 mb-3">
                                         <label for="cc-number">Credit card number</label>
-                                        <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                                        <input type="text" class="form-control" id="cc-number" placeholder="" maxlength="19" required="">
                                         <div class="invalid-feedback">
                                           Credit card number is required
                                         </div>
@@ -351,13 +354,14 @@
                                       </div>
                                       <div class="col-md-3 mb-3">
                                         <label for="cc-expiration">CVV</label>
-                                        <input type="text" class="form-control" id="cc-cvv" placeholder="CVV" required="">
+                                        <input type="text" class="form-control" id="cc-cvv" placeholder="CVV" maxlength="3" required="">
                                         <div class="invalid-feedback">
                                           Security code required
                                         </div>
                                       </div>
                                     </div>
                                     <hr class="mb-4">
+                                    {{ csrf_field() }}
                                     <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm & Pay</button>
                                   </form>
                                   <!-- Shipping Address End -->
@@ -372,4 +376,8 @@
 
     <br>
     <br>
+    @endsection
+
+    @section('scripts')
+      <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
     @endsection

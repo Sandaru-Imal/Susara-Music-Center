@@ -36,9 +36,11 @@ Route::get('/home2', function () {
     'uses' => 'CartController@getCheckout',
     'as' => 'checkout'
   ]);
- //Validation route and link to CheckoutController
-  // Route::get('form-validation', 'CheckoutController@formValidation');
-  // Route::post('form-validation', 'CheckoutController@formValidationPost');
+ // route and link to CheckoutController
+ Route::post('/checkout', [
+   'uses' => 'CartController@postCheckout',
+   'as' => 'checkout'
+ ]);
 
 
 Auth::routes();

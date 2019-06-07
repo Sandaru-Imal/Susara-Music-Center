@@ -12,26 +12,32 @@ class CheckoutController extends Controller
       //
       // }
     }
-   //  public function formValidation(){
-   //  	return view('form-validation');
-   //  }
-   //
-   //  public function formValidationPost(Request $request){
-   //   $this->validate($request,[
-   //       'firstname' => 'required|min:5|max:35',
-   //       'lastname' => 'required|min:5|max:35',
-   //       'email' => 'required|email|unique:users',
-   //
-   //     ],[
-   //       'firstname.required' => ' The first name field is required.',
-   //       'firstname.min' => ' The first name must be at least 5 characters.',
-   //       'firstname.max' => ' The first name may not be greater than 35 characters.',
-   //       'lastname.required' => ' The last name field is required.',
-   //       'lastname.min' => ' The last name must be at least 5 characters.',
-   //       'lastname.max' => ' The last name may not be greater than 35 characters.',
-   //     ]);
-   //
-   //
-   //   dd('You are successfully added all fields.');
-   // }
+    public function formValidation(){
+      // require 'lib/Stripe.php';
+
+      $error = '';
+      $success = '';
+
+      if ($_POST) {
+        \Stripe\Stripe::setApiKey("sk_test_xxx");
+
+        try {
+	         if (empty($_POST['street']) || empty($_POST['city']) || empty($_POST['zip']))
+           throw new Exception("Fill out all required fields.");
+           if (!isset($_POST['stripeToken']))
+           throw new Exception("The Stripe Token was not generated correctly");
+
+	          \Stripe\Charge::create([
+	             "amount" => 3000,
+	              "currency" => "eur",
+	              "source"   => $_POST['stripeToken'], // obtained with Stripe.js
+	              "description" => $_POST['email']
+	            ]);
+
+              $success = '<div class="alert alert-success"><strong>Success!</strong> Your payment was successful.</div>';
+            }catch (Exception $e) {
+	             $error = '<div class="alert alert-danger"><strong>Error!</strong> '.$e->getMessage().'</div>';
+             }
+        }
+    }
 }
