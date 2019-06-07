@@ -29,5 +29,7 @@ class CartController extends Controller
     return view('shop.checkout');
     // return view('shop.checkout', ['total' => $total]);
   }
-  
+  public function postCheckout(){
+    
+  }
 }

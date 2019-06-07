@@ -130,6 +130,10 @@
                               <!-- Summery of Cart End-->
                                 <div class="col-md-8 order-md-1">
                                   <!-- Billing Address Start -->
+                                  <div id="charge-error" class="alert alert-danger {{ !Session::has('error') ? 'hidden' : '' }}" role="alert">
+                                    {{ Session::get('error') }}
+                                    <!-- <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again. -->
+                                  </div>
                                   <h4 class="mb-3">Billing address</h4>
                                   <form class="needs-validation" novalidate="" id="checkout-form">
                                     <div class="row">
@@ -328,8 +332,8 @@
                                     <div class="row">
                                       <!-- Card Holder Name -->
                                       <div class="col-md-6 mb-3">
-                                        <label for="cc-name">Name on card</label>
-                                        <input type="text" class="form-control" id="cc-name" placeholder="" maxlength="70" required="">
+                                        <label for="card-name">Name on card</label>
+                                        <input type="text" class="form-control" id="card-name" placeholder="" maxlength="70" required="">
                                         <small class="text-muted">Full name as displayed on card</small>
                                         <div class="invalid-feedback">
                                           Name on card is required
@@ -337,8 +341,8 @@
                                       </div>
                                       <!-- Card Number -->
                                       <div class="col-md-6 mb-3">
-                                        <label for="cc-number">Credit card number</label>
-                                        <input type="text" class="form-control" id="cc-number" placeholder="" maxlength="19" required="">
+                                        <label for="card-number">Credit card number</label>
+                                        <input type="number" class="form-control" id="card-number" placeholder="" maxlength="19" required="">
                                         <div class="invalid-feedback">
                                           Credit card number is required
                                         </div>
@@ -346,15 +350,23 @@
                                     </div>
                                     <div class="row">
                                       <div class="col-md-3 mb-3">
-                                        <label for="cc-expiration">Expiration</label>
-                                        <input type="text" class="form-control" id="cc-expiration" placeholder="MM / YYYY" required="">
+                                        <label for="card-expiry-month">Expiration Month</label>
+                                        <input type="number" class="form-control" id="card-expiry-month" placeholder="Month"  min="1" max="12" required="">
                                         <div class="invalid-feedback">
                                           Expiration date required
                                         </div>
                                       </div>
                                       <div class="col-md-3 mb-3">
-                                        <label for="cc-expiration">CVV</label>
-                                        <input type="text" class="form-control" id="cc-cvv" placeholder="CVV" maxlength="3" required="">
+                                        <label for="card-expiry-year">Expiration Year</label>
+                                        <input type="number" class="form-control" id="card-expiry-year" placeholder="Year" maxlength="4" required="">
+                                        <div class="invalid-feedback">
+                                          Expiration date required
+                                        </div>
+                                      </div>
+
+                                      <div class="col-md-3 mb-3">
+                                        <label for="card-cvc">CVV</label>
+                                        <input type="number" class="form-control" id="card-cvc" placeholder="CVV" maxlength="3" required="">
                                         <div class="invalid-feedback">
                                           Security code required
                                         </div>
@@ -362,7 +374,7 @@
                                     </div>
                                     <hr class="mb-4">
                                     {{ csrf_field() }}
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm & Pay</button>
+                                    <button class="btn btn-primary btn-lg" type="submit">Confirm & Pay</button>
                                   </form>
                                   <!-- Shipping Address End -->
                                 </div>
@@ -380,4 +392,5 @@
 
     @section('scripts')
       <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+      <script type="text/javascript" src="{{ URL::to('js/checkout.js') }}"></script>
     @endsection
