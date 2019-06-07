@@ -27,9 +27,9 @@ class InstrumentsController extends Controller
       $cart->add($instrument,$instrument->instrumentId);
 
       $request->session()->put('cart', $cart);
-      dd($request->session()->get('cart'));//to show data in browser
+      // dd($request->session()->get('cart'));//to show data in browser
       return redirect()->route('instrument.percution');
     }
-    
+
 
 }

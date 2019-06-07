@@ -57,7 +57,7 @@
                         <!-- Shopping Cart Link-->
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar">
                           <i class="fa fa-shopping-cart"></i> Shopping Cart
-                          <span class="d-none d-md-inline">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+                          <span class="badge badge-pill badge-light">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                         </a>
                     </div>
                 </div>
