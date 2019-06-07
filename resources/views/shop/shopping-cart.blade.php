@@ -80,13 +80,12 @@
                           <ul class="list-group">
                               @foreach($instruments as $instrument)
                                   <ul class="list-group">
-                                    <li class="list-group-item">
-                                      <span class="badge">{{ $instrument['qty'] }}</span>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                      <strong>{{ $instrument['item']['instrumentId'] }}</strong>
                                       <strong>{{ $instrument['item']['instrumentName'] }}</strong>
-                                      <span class="label label-success">price</span>
-
+                                      <span class="badge badge-success">price</span>
                                       <div class="btn-group">
-                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                           Action <span class="caret"></span>
                                         </button>
                                           <ul class="dropdown-menu">
@@ -94,6 +93,7 @@
                                             <li><a href="#">Reduce all</a></li>
                                           </ul>
                                       </div>
+                                      <span class="badge badge-pill badge-info">{{ $instrument['qty'] }}</span>
                                     </li>
                                   </ul>
                               @endforeach
@@ -102,13 +102,14 @@
                   </div>
                   <div class="row">
                       <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                        <hr>
                         <strong>Total:</strong>
                       </div>
                   </div>
                   <hr>
                   <div class="row">
                       <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                          <button type="button" class="btn btn-success">CheckOut</button>
+                          <a href="{{ route('checkout') }}" type="button" class="btn btn-success">CheckOut</a>
                       </div>
                   </div>
                 @else

@@ -31,6 +31,11 @@ Route::get('/home2', function () {
    'uses' => 'CartController@getCart',
    'as' => 'shop.shoppingCart'
  ]);
+ //Checkout route and link to CartController
+  Route::get('/checkout', [
+    'uses' => 'CartController@getCheckout',
+    'as' => 'checkout'
+  ]);
 
 
 Auth::routes();
