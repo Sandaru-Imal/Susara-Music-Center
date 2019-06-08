@@ -73,6 +73,15 @@
                         <!--carousel-->
             <div class="container">
               <h1 class="text-center">My Cart</h1><br>
+              @if(Session::has('success'))
+                <div class="row">
+                  <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+                    <div id="charge-message" class="alert alert-success">
+                      {{ Session::get('success') }}
+                    </div>
+                  </div>
+                </div>
+              @endif  
                 <!-- Cart Start -->
                 @if(Session::has('cart'))
                   <div class="row">
