@@ -50,7 +50,7 @@ class CartController extends Controller
       // return redirect->route('checkout')->with('error', $e->getMessage());
     }
     Session::forget('cart');
-    return redirect()->route('shop.shopping-cart')->with('success', 'Successfully Purchased products!');
+    return redirect()->route('shop.shoppingCart')->with('success', 'Successfully Purchased products!');
 
   }
 }
