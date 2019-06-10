@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Customer extends Authenticatable
 {
-
+    protected $guard = 'customer';
     public $timestamps = false;
     use Notifiable;
     protected $primaryKey = 'customerId';

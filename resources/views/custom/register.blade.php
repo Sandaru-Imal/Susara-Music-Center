@@ -34,9 +34,9 @@
                     <div class="row">
                         <div class="col-md-8">
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                                 <input type="text" class="form-control" name="customerId" placeholder="CustomerId *" value="{{old('customerId')}}" />
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                                 <input type="text" class="form-control" name="fname" placeholder="First Name *" value="{{old('fname')}}" />
@@ -50,7 +50,11 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" name="mobile" placeholder="Mobile No*" value="{{old('mobile')}}" />
+                                <input type="text" class="form-control" name="phoneNo" placeholder="Mobile No*" value="{{old('phoneNo')}}" />
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="nic" placeholder="NIC No*" value="{{old('NIC No')}}" />
                             </div>
 
                             <div class="form-group">
@@ -66,10 +70,10 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Password *" value="" name="password"/>
+                                <input type="password" class="form-control" placeholder="Password *" value="" name="password"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Confirm Password *" value="" name="password_confirmation"/>
+                                <input type="password" class="form-control" placeholder="Confirm Password *" value="" name="password_confirmation"/>
                             </div>
 
                         </div>

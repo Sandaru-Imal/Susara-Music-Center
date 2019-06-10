@@ -1,15 +1,18 @@
 <?php
+
 namespace App;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Admin extends Authenticatable
+class User extends Authenticatable
 {
-    protected $guard = 'admin';
+    protected $guard = 'user';
     public $timestamps = false;
     use Notifiable;
-    protected $primaryKey = 'adminId';
+    protected $primaryKey = 'userId';
     public $incrementing = true;
 
     /**
@@ -18,7 +21,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'adminId','fname', 'lname','no', 'street','city','phoneNO','email','password',
+        'userId','username','password',
     ];
 
     /**
@@ -36,7 +39,6 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        // 'email_verified_at' => 'datetime',
     ];
 }
-

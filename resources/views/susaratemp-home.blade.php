@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/sidenav.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/loginNew.css">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/custom.css') }}">
     <title>Susara Music</title>
 </head>
-<body>
+
 
         <body>
 
@@ -27,14 +27,14 @@
                                         aria-expanded="false"><i class="fa fa-user-circle-o"></i> <span class="d-none d-md-inline">Join</span> </a>
 
                                         <div class="collapse" id="menu">
-                                                <a href="{{ route('login') }}" class="list-group-item" data-parent="#menu1" data-toggle="modal" data-target="#elegantModalForm">Login</a>
+                                                <a href="{{route('login')}}" class="list-group-item" data-parent="#menu1" data-toggle="modal" data-target="#elegantModalForm">Login</a>
 
                                                 <a href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Sign-up</a>
                                                     <div class="collapse" id="menu1sub1">
-                                                        <a href="{{ route('register') }}" class="list-group-item" data-parent="#menu1sub1"  data-toggle="modal" data-target="#exampleModal">Customer</a>
+                                                        <a href="{{ route('custom.register') }}" class="list-group-item" data-parent="#menu1sub1" data-toggle="modal" data-target=#modalContactForm>Customer</a>
                                                         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></button> -->
 
-                                                        <!-- <a href="#" class="list-group-item" data-parent="#menu1sub1">Student</a> -->
+                                                        <!-- <a href="{{route('register')}}" class="list-group-item" data-parent="#menu1sub1">Student</a> -->
 
                                                     </div>
 
@@ -284,76 +284,13 @@
                             </div>
 
                             <!-- registration form -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="glyphicon glyphicon-eye-open" id="exampleModalLabel">Register New Users</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <form class="form-horizontal " action="{{route('custom.register')}}" method="post">
-                @csrf
-                <div class="form-content">
-                    <div class="row">
-                        <div class="col-md-8">
 
-                             <!-- <div class="form-group">
-                                <input type="text" class="form-control" name="customerId" placeholder="CustomerId*" value="{{old('customerId')}}" />
-                            </div> -->
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="fname" placeholder="First Name *" value="{{old('fname')}}" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="lname" placeholder="last Name *" value="{{old('lname')}}" />
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="email" placeholder="Email Address *" value="{{old('email')}}" />
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="mobile" placeholder="Mobile No*" value="{{old('mobile')}}" />
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Home No"  name="no" value="{{old('no')}}" name="no" />
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Street *"  name="street"  value="{{old('street')}}"/>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="City *"  value="{{old('city')}}"  name="city"/>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password *" value="" name="password"/>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Confirm Password *" value="" name="password_confirmation"/>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-
-                        </div>
-                    </div>
-                    <button type="submit" class=" btn btn-primary btn-block">Register</button>
-
-                </div>
-            </form>
-    </div>
-  </div>
-</div>
               <!-- end of registration form -->
 
               <!-- Login form -->
-        <!-- Modal -->
+<!-- Modal -->
+<form method="POST" action="{{ route('login') }}">
+@csrf
 <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -370,12 +307,12 @@
       <div class="modal-body mx-4">
         <!--Body-->
         <div class="md-form mb-5">
-          <input type="email" id="Form-email1" class="form-control validate">
+          <input type="email" id="Form-email1" class="form-control validate" name="email">
           <label data-error="wrong" data-success="right" for="Form-email1">Your email</label>
         </div>
 
         <div class="md-form pb-3">
-          <input type="password" id="Form-pass1" class="form-control validate">
+          <input type="password" id="Form-pass1" class="form-control validate" name="password">
           <label data-error="wrong" data-success="right" for="Form-pass1">Your password</label>
           <p class="font-small blue-text d-flex justify-content-end">Forgot <a href="#" class="blue-text ml-1">
               Password?</a></p>
@@ -406,13 +343,18 @@
   </div>
 </div>
 <!-- Modal -->
+
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#elegantModalForm">Launch
+    modal Login Form</a>
+</div>
+</form>
               <!-- end of login form -->
 
-</div>
   <main class="py-4">
      @yield('content')
   </main>
-</div>
+
 
   </div><!--side bar -->
 
@@ -440,7 +382,93 @@
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-                </body>
-
 </body>
+
+<div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Register Here</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="form-horizontal " action="{{route('custom.register')}}" method="post">
+                @csrf
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="form34" class="form-control validate" name="fname">
+          <label data-error="wrong" data-success="right" for="form34">Your First name</label>
+        </div>
+
+        <div class="md-form mb-5">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="form34" class="form-control validate" name="lname">
+          <label data-error="wrong" data-success="right" for="form34">Your Last name</label>
+        </div>
+
+        <div class="md-form mb-5">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="form29" class="form-control validate" name="email">
+          <label data-error="wrong" data-success="right" for="form29">Your email</label>
+        </div>
+
+        <div class="md-form mb-5">
+          <i class="fas fa-tag prefix grey-text"></i>
+          <input type="text" id="form32" class="form-control validate" name="phoneNo">
+          <label data-error="wrong" data-success="right" for="form32">Mobile Number</label>
+        </div>
+
+        <div class="md-form mb-5">
+          <i class="fas fa-tag prefix grey-text"></i>
+          <input type="text" id="form32" class="form-control validate" name="nic">
+          <label data-error="wrong" data-success="right" for="form32">NIC Number</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fas fa-pencil prefix grey-text"></i>
+          <input type="text" id="form32" class="form-control validate" name="no">
+          <label data-error="wrong" data-success="right" for="form8">Home No</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fas fa-pencil prefix grey-text"></i>
+          <input type="text" id="form32" class="form-control validate" name="street">
+          <label data-error="wrong" data-success="right" for="form8">Street</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fas fa-pencil prefix grey-text"></i>
+          <input type="text" id="form32" class="form-control validate" name="city">
+          <label data-error="wrong" data-success="right" for="form8">City</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fas fa-pencil prefix grey-text"></i>
+          <input type="password" id="form32" class="form-control validate" name="password">
+          <label data-error="wrong" data-success="right" for="form8">Password</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fas fa-pencil prefix grey-text"></i>
+          <input type="password" id="form32" class="form-control validate" name="password_confirmation">
+          <label data-error="wrong" data-success="right" for="form8">Confirm Password</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-unique" type="submit">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Launch
+    Modal Contact Form</a>
+</div>
+
 </html>
