@@ -30,6 +30,16 @@ class InstrumentsController extends Controller
       // dd($request->session()->get('cart'));//to show data in browser
       return redirect()->route('instrument.percution');
     }
+    public function removeFromCart(Request $request, $instrumentId){
+      $instrument = Instruments::find($instrumentId);
+      $oldCart = Session::has('cart') ? Session::get('cart') : null;
+      $cart = new Cart($oldCart);
+      $cart->destroy($instrument,$instrument->instrumentId);
+
+      $request->session()->put('cart', $cart);
+      // dd($request->session()->get('cart'));//to show data in browser
+      return redirect()->route('shop.shopping-cart');
+    }
 
 
 }
