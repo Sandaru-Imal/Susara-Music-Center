@@ -2,37 +2,58 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 use Auth;
 
 class AdminLoginController extends Controller
 {
-    public function __construct(){
-        $this->middleware('guest:admin');
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
+
+    // use AuthenticatesUsers;
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    // protected $redirectTo = '/home';
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    // public function __construct()
+    // {
+    //     $this->middleware('guest:customer')->except('logout');
+    // }
+
+    public function showLoginForm(){
+        return view('auth.admin-login');
     }
 
-   public function showLoginForm(){
-       return view('auth.admin-login');
-   }
-   
-   public function login(Request $request){
-    //validate the form data
-    $this->validate($request, [
-        'email' => 'required|email',
-        'password' => 'required|min:6',
-    ]);
-    //attempt to log user in
-    if (Auth::guard('admin')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember)) {
-        //if successfull redirect to intendented locatoin
-        // return redirect()->intended(route('admin.dashboard'));
-        return redirect()->intended(route('admin.dashboard'));
-    }
-        
-    
-    //if unsuccessful ridrect back with form data
-    return redirect()->back()->withInput($request->only('email','remember'));
+    public function login(Request $request){
+        $this->validate($request,[
+            'email'=>'required|email',
+            'password'=>'required|min:6'
 
+        ]);
+
+        if (Auth::guard('customer')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember)) {
+            return redirect()->intended('user.dashboard');
+        }
+
+        return redirect()->back()->withInput($request->only('email','remember'));
     }
-   
 }

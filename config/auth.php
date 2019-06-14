@@ -63,6 +63,11 @@ return [
             'driver' => 'session',
             'provider' => 'customers',
         ],
+
+        'cashier' => [
+            'driver' => 'session',
+            'provider' => 'cashiers',
+        ],
     ],
 
     /*
@@ -97,7 +102,12 @@ return [
 
         'customers' => [
             'driver' => 'eloquent',
-            'model' => App\Customer::class,
+            'model' => App\Customers_phoneNo::class,
+        ],
+
+        'cashiers' => [
+            'driver' => 'eloquent',
+            'model' => App\Cashier::class,
         ],
 
         

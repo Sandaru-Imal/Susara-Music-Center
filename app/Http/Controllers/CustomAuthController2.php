@@ -34,7 +34,7 @@ class CustomAuthController2 extends Controller
 
         $userId = User::pluck('userId')->last();
         $user->userId = $userId + 1;
-        $user->username = "customer";
+        $user->username = "admin";
         $user -> password = bcrypt(request('password'));
         
 

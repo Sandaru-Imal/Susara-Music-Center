@@ -2,16 +2,12 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Customers_phoneNo extends Authenticatable
+class Customerphoneno extends Model
 {
-    protected $guard = 'customer';
+    public $table = 'customerphoneno';
     public $timestamps = false;
-    use Notifiable;
     protected $primaryKey = 'customerId';
     public $incrementing = true;
 
@@ -21,7 +17,7 @@ class Customers_phoneNo extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'customerId','email','nic','password','phoneNo','userId'
+        'customerId','phoneNo','nic','email','password','userId'
     ];
 
     /**
