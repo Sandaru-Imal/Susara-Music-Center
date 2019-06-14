@@ -31,11 +31,13 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/home';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    //  @return void
+
+    //  public function showLoginForm()
+    //  {
+    //      return view('auth.login');
+    //  }
+     
     public function __construct()
     {
         $this->middleware('guest',['except'=>['logout','userLogout']]);
@@ -46,4 +48,6 @@ class LoginController extends Controller
         Auth::guard('web')->logout();
         return redirect('/');
     }
+
+
 }

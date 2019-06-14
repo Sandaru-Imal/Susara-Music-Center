@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
-
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -66,7 +66,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Admin::create([
+        return User::create([
             'adminId'=>$data['adminId'],
             'fname' => $data['fname'],
             'lname' => $data['lname'],
@@ -79,7 +79,4 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function showRegistrationForm() {
-        return view('custom.register');
-    }
 }

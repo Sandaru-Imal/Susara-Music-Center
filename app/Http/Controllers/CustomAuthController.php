@@ -15,4 +15,9 @@ class CustomAuthController extends Controller
             //view register.blade.php inside custom folder
             return view('custom.register');
     } 
+
+    // public function showRegisterForm(){
+    //     //view register.blade.php inside custom folder
+    //     return view('custom.register');
+    // }
 }

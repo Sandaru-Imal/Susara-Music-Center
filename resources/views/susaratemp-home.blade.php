@@ -289,8 +289,11 @@
 
               <!-- Login form -->
 <!-- Modal -->
-<form method="POST" action="{{ route('login') }}">
-@csrf
+<!-- login with custom login controller -->
+<!-- <form method="POST" action="{{ route('login') }}"> -->
+
+<!-- login with inbuilt login -->
+
 <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -303,8 +306,11 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <!--Body-->
       <div class="modal-body mx-4">
+      <form method="POST" action="{{ route('custom.login') }}">
+        @csrf
         <!--Body-->
         <div class="md-form mb-5">
           <input type="email" id="Form-email1" class="form-control validate" name="email">
@@ -319,11 +325,15 @@
         </div>
 
         <div class="text-center mb-3">
-          <button type="button" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Sign in</button>
+          <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a" >Sign in</button>
         </div>
+        <!-- <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-unique" type="submit">Login here <i class="fas fa-paper-plane-o ml-1"></i></button>
+      </div> -->
+
         <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in
           with:</p>
-
+        </form>
         <div class="row my-3 d-flex justify-content-center">
           <!--Facebook-->
           <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-facebook-f text-center"></i></button>
@@ -333,22 +343,14 @@
           <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fab fa-google-plus-g"></i></button>
         </div>
       </div>
+      
       <!--Footer-->
-      <div class="modal-footer mx-5 pt-3 mb-1">
-        <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="#" class="blue-text ml-1">
-            Sign Up</a></p>
-      </div>
-    </div>
+      
     <!--/.Content-->
   </div>
 </div>
 <!-- Modal -->
 
-<div class="text-center">
-  <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#elegantModalForm">Launch
-    modal Login Form</a>
-</div>
-</form>
               <!-- end of login form -->
 
   <main class="py-4">
@@ -357,11 +359,6 @@
 
 
   </div><!--side bar -->
-
-                <div class="form">
-                    <div class="note">
-                        <p>User Registration</p>
-                    </div>
                     @if(count($errors)>0)
                         @foreach($errors->all() as $error)
                             <p class="alert alert-danger">
@@ -459,16 +456,11 @@
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-unique" type="submit">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+        <button class="btn btn-unique" type="submit">Sign Up <i class="fas fa-paper-plane-o ml-1"></i></button>
       </div>
     </div>
     </form>
   </div>
-</div>
-
-<div class="text-center">
-  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Launch
-    Modal Contact Form</a>
 </div>
 
 </html>
