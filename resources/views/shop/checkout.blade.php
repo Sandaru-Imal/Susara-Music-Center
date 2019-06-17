@@ -182,7 +182,7 @@
 
                                         <div class="d-block my-3">
                                           <div class="custom-control custom-radio">
-                                            <input id="credit-card" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                                            <input id="credit-card" name="paymentMethod" type="radio" class="custom-control-input" onclick="show2();" checked required>
                                             <label class="custom-control-label" for="credit-card">
                                               &nbsp;&nbsp;&nbsp;&nbsp;
                                               <img src="{{asset("dist/img/checkout-img/credit-card.png")}}" alt="">

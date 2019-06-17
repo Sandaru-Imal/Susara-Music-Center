@@ -12,3 +12,10 @@ function show1(){
 
   }
 }
+function show2(){
+  if (document.getElementById('credit-card').checked) {
+    document.getElementById('stripe-method').style.display = 'block';
+  } else {
+
+  }
+}
