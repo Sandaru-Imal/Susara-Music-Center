@@ -2,6 +2,9 @@
 
 @section('title', 'Susara Music Center | Shopping Cart')
 @section('content')
+<script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript" src="{{asset("js/checkout.js")}}"></script>
+<script type="text/javascript" src="{{asset("js/checkoutform.js")}}"></script>
     <!--side bar -->
     <div class="col-3">
 
@@ -130,7 +133,7 @@
                               <!-- Summery of Cart End-->
                                 <div class="col-md-8 order-md-1">
                                   <!-- Billing Address Start -->
-                                  <div id="charge-error" class="alert alert-danger {{ !Session::has('error') ? 'hidden' : '' }}" role="alert">
+                                  <div id="charge-error" class="alert {{ !Session::has('error') ? 'hidden' : '' }}" role="alert">
                                     {{ Session::get('error') }}
                                     <!-- <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again. -->
                                   </div>
@@ -175,9 +178,33 @@
                                         </div>
 
                                         <hr class="mb-4">
+                                        <h4 class="mb-3">Payment Options</h4>
+
+                                        <div class="d-block my-3">
+                                          <div class="custom-control custom-radio">
+                                            <input id="credit-card" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                                            <label class="custom-control-label" for="credit-card">
+                                              &nbsp;&nbsp;&nbsp;&nbsp;
+                                              <img src="{{asset("dist/img/checkout-img/credit-card.png")}}" alt="">
+                                              Credit card
+                                            </label>
+                                          </div>
+
+                                          <div class="custom-control custom-radio">
+                                            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" onclick="show1();" required>
+                                            <label class="custom-control-label" for="paypal">
+                                              &nbsp;&nbsp;&nbsp;&nbsp;
+                                              <img src="{{asset("dist/img/checkout-img/paypal.png")}}" alt="">
+                                              PayPal
+                                            </label>
+                                          </div>
+                                        </div>
+
+
+                                        <hr class="mb-4">
                                         <h4 class="mb-3">Payment</h4>
 
-                                        <div class="row">
+                                        <div class="row" id="stripe-method">
                                           <div class="col-md-6 mb-3">
                                             <label for="card-name">Name on card</label>
                                             <input type="text" class="form-control" id="card-name" placeholder="Name on card" required>
@@ -219,14 +246,14 @@
                                                 Security code required
                                               </div>
                                             </div>
-
+                                          </div>
                                             <div class="col-md-12 mb-3">
                                               <hr class="mb-4">
                                               {{ csrf_field() }}
                                               <button class="btn btn-primary btn-lg" type="submit">Confirm & Pay</button>
                                             </div>
                                           <!-- </div> -->
-                                        </div>
+
                                       </form>
                                     </div>
                                   <!-- </div> -->
@@ -239,13 +266,13 @@
                 <!-- CheckOut End -->
             </div>
             <!--carousel end -->
-
-
     <br>
     <br>
     @endsection
 
     @section('scripts')
       <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
       <script type="text/javascript" src="{{ URL::to('js/checkout.js') }}"></script>
+      <script type="text/javascript" src="{{ URL::to('js/checkoutform.js') }}"></script>
     @endsection

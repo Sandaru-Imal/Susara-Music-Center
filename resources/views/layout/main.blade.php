@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset("dist/css/sidenav.css")}}">
     <link rel="stylesheet" href="{{asset("dist/css/style.css")}}">
     <link rel="stylesheet" href="{{asset("dist/css/styles.css")}}">
+    <!-- <script src="{{asset("js/checkoutform.js")}}" charset="utf-8"></script> -->
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
