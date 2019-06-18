@@ -9,11 +9,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    protected $guard = 'user';
-    public $timestamps = false;
+    protected $table = 'customers';
+    // protected $guard = 'user';
+    // public $timestamps = false;
     use Notifiable;
-    protected $primaryKey = 'userId';
-    public $incrementing = true;
+    // protected $primaryKey = 'userId';
+    // public $incrementing = true;
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +22,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'userId','username','password',
+        'username','password',
     ];
 
     /**
@@ -42,5 +43,5 @@ class User extends Authenticatable
         // 'email_verified_at' => 'datetime',
     ];
 
-    protected $table = 'Customers_phoneNo';
+    
 }

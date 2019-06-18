@@ -14,10 +14,10 @@ class CreateLessonsTable extends Migration
     public function up()
     {
         Schema::create('lessons', function (Blueprint $table) {
-            $table->integer('lessonNo')->unsigned();
-			$table->primary('lessonNo');
+            $table->increments('lessonNo');
             $table->string('title');
             $table->string('url');
+            $table->timestamps();
         });
     }
 

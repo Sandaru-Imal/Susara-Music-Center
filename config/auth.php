@@ -15,7 +15,7 @@ return [
     //web guard is the default guard for authenticate the users
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'customers',
     ],
 
     
@@ -59,7 +59,7 @@ return [
             'hash' => false,
         ],
 
-        'customer' => [
+        'web' => [
             'driver' => 'session',
             'provider' => 'customers',
         ],
@@ -102,7 +102,7 @@ return [
 
         'customers' => [
             'driver' => 'eloquent',
-            'model' => App\Customers_phoneNo::class,
+            'model' => App\Customer::class,
         ],
 
         'cashiers' => [

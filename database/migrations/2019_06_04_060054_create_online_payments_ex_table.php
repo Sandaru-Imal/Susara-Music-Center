@@ -19,6 +19,7 @@ class CreateOnlinePaymentsExTable extends Migration
                 $table->primary('oPyamentId');
                 $table->double('totalAmount');
                 $table->integer('quantity');
+                $table->timestamps();
             });
     
             Schema::table('online_payments_ex', function($table) {

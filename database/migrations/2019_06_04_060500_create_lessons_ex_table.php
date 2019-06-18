@@ -14,9 +14,9 @@ class CreateLessonsExTable extends Migration
     public function up()
     {
         Schema::create('lessons_ex', function (Blueprint $table) {
-            $table->integer('lessonNo')->unsigned();
-			$table->primary('lessonNo');
+            $table->increments('lessonNo');
             $table->string('category');
+            $table->timestamps();
             $table->integer('adminId')->unsigned();
             $table->foreign('adminId')->references('adminId')->on('admins');
         });

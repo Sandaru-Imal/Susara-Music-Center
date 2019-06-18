@@ -18,6 +18,7 @@ class CreateOnlinePaymentsEx2Table extends Migration
 			$table->primary('oPaymentId');
             $table->string('creditCardNo');
             $table->integer('orderId');
+            $table->timestamps();
         });
     }
 

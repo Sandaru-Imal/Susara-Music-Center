@@ -14,8 +14,7 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->unsignedInteger('adminId');
-			$table->primary('adminId');
+            $table->increments('adminId');
             $table->string('fname');
             $table->string('lname');
             $table->string('phoneNo');
@@ -25,8 +24,9 @@ class CreateAdminsTable extends Migration
             $table->string('nic');
             $table->string('email')->unique();
             $table->string('password');
+            $table->timestamps();
 
-            $table->integer('userId')->unsigned();
+            $table->unsignedInteger('userId')->unsigned();
             $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
         });
     }

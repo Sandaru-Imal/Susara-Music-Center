@@ -14,9 +14,7 @@ class CreateCashiersTable extends Migration
     public function up()
     {
         Schema::create('cashiers', function (Blueprint $table) {
-            $table->unsignedInteger('cashierId');
-            $table->primary('cashierId');
-            // $table->bigIncrements('cashierId');
+            $table->increments('cashierId');
             $table->string('fname');
             $table->string('lname');
             $table->string('phoneNo');
@@ -26,6 +24,7 @@ class CreateCashiersTable extends Migration
             $table->string('nic');
             $table->string('email')->unique();
             $table->string('password');
+            $table->timestamps();
         });
 
         Schema::table('cashiers', function($table) {

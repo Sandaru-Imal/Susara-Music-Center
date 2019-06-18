@@ -14,11 +14,11 @@ class CreateNewItemsCategoriesTable extends Migration
     public function up()
     {
         Schema::create('new_items_categories', function (Blueprint $table) {
-            $table->integer('itemNo')->unsigned();
-			$table->primary('itemNo');
+            $table->increments('itemNo');
             $table->string('category');
             $table->double('price');
-            $table->integer('adminId')->unsigned();
+            $table->timestamps();
+            $table->unsignedInteger('adminId')->unsigned();
             $table->foreign('adminId')->references('adminId')->on('admins');
         });
     }

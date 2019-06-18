@@ -14,11 +14,11 @@ class CreateStockExTable extends Migration
     public function up()
     {
         Schema::create('stock_ex', function (Blueprint $table) {
-            $table->integer('sItemNo')->unsigned();
-			$table->primary('sItemNo');
+            $table->increments('sItemNo');
             $table->double('price');
             $table->string('category');
             $table->integer('quantity');
+            $table->timestamps();
         });
     }
 

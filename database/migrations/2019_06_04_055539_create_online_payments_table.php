@@ -14,7 +14,7 @@ class CreateOnlinePaymentsTable extends Migration
     public function up()
     {
         Schema::create('online_payments', function (Blueprint $table) {
-            $table->integer('oPaymentId')->unsigned();
+            $table->integer('oPaymentId');
 			$table->primary('oPaymentId');
             $table->integer('orderId');
         });

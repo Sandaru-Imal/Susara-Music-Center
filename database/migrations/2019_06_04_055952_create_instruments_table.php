@@ -15,10 +15,11 @@ class CreateInstrumentsTable extends Migration
     {
         Schema::create('instruments', function (Blueprint $table) {
             $table->integer('instrumentId')->unsigned();
-			      $table->primary('instrumentId');
+			$table->primary('instrumentId');
             $table->string('instrumentName');
             $table->text('description');
             $table->string('imagepath');
+            $table->timestamps();
         });
     }
 

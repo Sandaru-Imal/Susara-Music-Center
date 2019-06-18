@@ -14,9 +14,9 @@ class CreateSongDetailsExTable extends Migration
     public function up()
     {
         Schema::create('song_details-ex', function (Blueprint $table) {
-            $table->integer('songId')->unsigned();
-			$table->primary('songId');
+            $table->increments('songId');
             $table->string('artist');
+            $table->timestamps();
             $table->integer('adminId')->unsigned();
             $table->foreign('adminId')->references('adminId')->on('admins');
         });

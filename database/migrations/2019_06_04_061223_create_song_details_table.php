@@ -14,10 +14,10 @@ class CreateSongDetailsTable extends Migration
     public function up()
     {
         Schema::create('song_details', function (Blueprint $table) {
-            $table->integer('songId')->unsigned();
-			$table->primary('songId');
+            $table->increments('songId');
             $table->string('songName');
             $table->string('lyrics');
+            $table->timestamps();
         });
     }
 

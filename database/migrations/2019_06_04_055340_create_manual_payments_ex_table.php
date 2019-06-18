@@ -14,9 +14,9 @@ class CreateManualPaymentsExTable extends Migration
     public function up()
     {
         Schema::create('manual_payments_ex', function (Blueprint $table) {
-            $table->integer('mPyamentId')->unsigned();
-            $table->primary('mPyamentId');
+            $table->increments('mPyamentId');
             $table->double('totalAmount');
+            $table->timestamps();
         });
 
         Schema::table('manual_payments_ex', function($table) {
