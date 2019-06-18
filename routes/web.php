@@ -11,6 +11,7 @@
 |
 */
 
+
  Route::get('/', 'FrontController@index' )->name('home');
  Route::get('/percution', 'FrontController@percution' )->name('percution');
  Route::get('/percution', [
@@ -46,6 +47,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes(['verify' => true]);
 
+Route::get('profile', function () {
+  return 'This is profile';
+})->middleware('verified');
+
+
+
 // Authentication Routes...
 // Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 // Route::post('login', 'Auth\LoginController@login');
@@ -65,7 +72,5 @@ Auth::routes(['verify' => true]);
 // Route::post('admins/register', 'Auth\AdminsRegisterController@register');
 
 // Route::get('/user/activation/{token}', 'Auth\RegisterController@userActivation');
-
-// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

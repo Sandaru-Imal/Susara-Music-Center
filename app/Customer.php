@@ -3,10 +3,13 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Customer extends Authenticatable
+
+class Customer extends Authenticatable implements MustVerifyEmail
+
 {
     protected $table = 'customers';
     protected $primaryKey = 'customerId';
@@ -21,7 +24,7 @@ class Customer extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'fname', 'lname','no', 'street','city','nic','email','password','phoneNo'
+        'fname', 'lname','no', 'street','city','nic','email','password','phoneNo','active_token'
     ];
 
     /**

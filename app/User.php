@@ -4,17 +4,14 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+
+class User extends Authenticatable implements MustVerifyEmail
 {
     protected $table = 'customers';
-    // protected $guard = 'user';
-    // public $timestamps = false;
     use Notifiable;
-    // protected $primaryKey = 'userId';
-    // public $incrementing = true;
+   
 
     /**
      * The attributes that are mass assignable.
@@ -40,7 +37,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        // 'email_verified_at' => 'datetime',
+         'email_verified_at' => 'datetime',
     ];
 
     
