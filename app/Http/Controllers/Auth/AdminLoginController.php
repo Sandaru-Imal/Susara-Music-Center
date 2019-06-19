@@ -9,6 +9,7 @@ use Auth;
 
 class AdminLoginController extends Controller
 {
+    protected $table = 'admin';
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -20,24 +21,24 @@ class AdminLoginController extends Controller
     |
     */
 
-    // use AuthenticatesUsers;
+    use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    // protected $redirectTo = '/home';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('guest:customer')->except('logout');
-    // }
+    public function __construct()
+    {
+        $this->middleware('guest:admin')->except('logout');
+    }
 
     public function showLoginForm(){
         return view('auth.admin-login');
@@ -50,8 +51,8 @@ class AdminLoginController extends Controller
 
         ]);
 
-        if (Auth::guard('customer')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember)) {
-            return redirect()->intended('user.dashboard');
+        if (Auth::guard('admin')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember)) {
+            return redirect()->intended('admin.dashboard');
         }
 
         return redirect()->back()->withInput($request->only('email','remember'));

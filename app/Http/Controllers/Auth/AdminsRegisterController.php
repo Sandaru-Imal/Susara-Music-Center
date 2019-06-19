@@ -12,7 +12,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class AdminsRegisterController extends Controller
 {
-    protected $table = 'customers_phoneno';
+    protected $table = 'admins';
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -44,8 +44,8 @@ class AdminsRegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function showRegistrationForm(){
-        return view('adminRegister');
+    public function showRegisterForm(){
+        return view('auth.admin-register');
     }
 
     // protected function validator(array $data)
@@ -86,6 +86,7 @@ class AdminsRegisterController extends Controller
         $admin = new Admin();
         $user = new User();
 
+        $userId = User::pluck('userId')->last();
         $adminId = Admin::pluck('adminId')->last();
         $admin->adminId = $adminId + 1;
         $admin->fname = $request['fname'];
@@ -96,15 +97,9 @@ class AdminsRegisterController extends Controller
         $admin->email = $request['email'];
         $admin->phoneNo = $request['phoneNo'];
         $admin->password = $request['password'];
-
-        $userId = User::pluck('userId')->last();
-        $user->userId = $userId + 1;
-        $user->username = "customer";
-        $user -> password = bcrypt(request('password'));
-
+        $admin->userId = $userId + 1;
 
         $admin->save();
-        $user->save();
         return redirect('adminDashboard');  
     }
 
@@ -114,7 +109,7 @@ class AdminsRegisterController extends Controller
         return $this->validate($request,[
             'fname' => 'required|max:225',
             'lname' => 'required|max:225',
-            //'email' => 'required|email|unique:customers|max:225',
+            'email' => 'required|email|unique:customers|max:225' ,'unique:admins',
             'mobile' => 'required|max:10',
             'no' => 'required|max:225',
             'street' => 'required|max:225',

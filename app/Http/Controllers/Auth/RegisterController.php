@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Events\Auth\CustomerActivationEmail;
 
 class RegisterController extends Controller
 {
@@ -73,7 +74,7 @@ class RegisterController extends Controller
             'nic' => $data['nic'],
             'email' => $data['email'],
             'active'=>false,
-            'remember_token'=>str_random(255),
+            'active_token'=>str_random(20),
             'password' => Hash::make($data['password']),
         ]);
     }

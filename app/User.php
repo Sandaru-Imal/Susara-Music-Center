@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
+    protected $primaryKey = 'customerId';
     protected $table = 'customers';
     use Notifiable;
    

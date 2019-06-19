@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
 class Customer extends Authenticatable implements MustVerifyEmail
 
 {
-    protected $table = 'customers';
     protected $primaryKey = 'customerId';
+    protected $table = 'customers';
+    
     
     use Notifiable;
     // protected $primaryKey = 'customerId';

@@ -4,10 +4,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class Admin extends Authenticatable
 {
     protected $guard = 'admin';
-    public $timestamps = false;
+    protected $table = 'admins';
+    // public $timestamps = false;
     use Notifiable;
     protected $primaryKey = 'adminId';
     public $incrementing = true;
@@ -18,7 +20,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'adminId','fname', 'lname','no', 'street','city','phoneNO','email','password',
+        'adminId','fname', 'lname','no', 'street','city','phoneNO','email','password','userId'
     ];
 
     /**
