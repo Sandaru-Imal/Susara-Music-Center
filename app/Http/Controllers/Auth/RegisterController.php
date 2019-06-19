@@ -77,7 +77,11 @@ class RegisterController extends Controller
             'active_token'=>str_random(20),
             'password' => Hash::make($data['password']),
         ]);
-    }
+
+        $user->sendEmailVerificationNotification();
+
+        return $user;
+        }
      /**
      * The user has been registered.
      *

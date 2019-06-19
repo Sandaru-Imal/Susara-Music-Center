@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Admin;
-use App\User;
+use App\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
@@ -84,22 +84,32 @@ class AdminsRegisterController extends Controller
 
     public function register(Request $request){
         $admin = new Admin();
-        $user = new User();
+        $user = new Users();
 
-        $userId = User::pluck('userId')->last();
+        
         $adminId = Admin::pluck('adminId')->last();
+        $userId = Users::pluck('userId')->last();
+
         $admin->adminId = $adminId + 1;
         $admin->fname = $request['fname'];
         $admin->lname = $request['lname'];
         $admin->no = $request['no'];
+        $admin->nic = $request['nic'];
         $admin->street = $request['street'];
         $admin->city = $request['city'];
         $admin->email = $request['email'];
         $admin->phoneNo = $request['phoneNo'];
-        $admin->password = $request['password'];
+        $admin->password = bcrypt('password');
+        $admin->remember_token=str_random(20);
         $admin->userId = $userId + 1;
-
+        
+        $user->userId = $userId + 1;
+        $user->username = 'admin';
+        $user->password = bcrypt('password');
+       
+        $user->save();
         $admin->save();
+        
         return redirect('adminDashboard');  
     }
 

@@ -10,6 +10,7 @@ use Auth;
 class AdminLoginController extends Controller
 {
     protected $table = 'admin';
+    protected $guard = 'admin';
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -21,7 +22,7 @@ class AdminLoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    // use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
