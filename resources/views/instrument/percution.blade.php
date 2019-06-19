@@ -86,7 +86,7 @@
                     </a>
                   </div>
                   <h5 class="text-center">{{ $instrument->instrumentName }}</h5>
-                  <!-- <h5 class="text-center">Price: $ {{ $instrument->price }}</h5> -->
+                  <h5 class="text-center">Price: $ {{ $instrument->price }}</h5>
                   <div class="btn">
                       <a href="#"><button type="button" class="btn btn-outline-primary btn-sm"><img src="{{asset("dist/img/buy.png")}}" alt=""> Buy Now</button></a>&nbsp;&nbsp;
                       <a href="{{ route('instrument.addToCart', ['instrumentId' => $instrument->instrumentId]) }}"><button type="button" class="btn btn-outline-success btn-sm"><img src="{{asset("dist/img/cart-icon.png")}}" alt=""> Add to Cart</button></a>

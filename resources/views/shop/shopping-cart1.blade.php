@@ -84,43 +84,36 @@
               @endif
                 <!-- Cart Start -->
                 @if(Session::has('cart'))
-                <table class="table table-hover">
-                  <thead class="thead-dark">
-                    <tr>
-                      <th scope="col">Item No</th>
-                      <th scope="col">Item Name</th>
-                      <th scope="col">Price</th>
-                      <th scope="col">Option</th>
-                      <th scope="col">Quantity</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  @foreach($instruments as $instrument)
-                    <tr>
-                      <th scope="row">{{ $instrument['item']['instrumentId'] }}</th>
-                      <td>{{ $instrument['item']['instrumentName'] }}</td>
-                      <td>LKR: {{ $instrument['item']['price'] }}</td>
-                      <td width="150px">
-                        <div class="input-group sm-3">
-                          <div class="input-group-prepend">
-                            <a href="{{ route('instrument.reduceQtyByOne', ['instrumentId' => $instrument['item']['instrumentId']]) }}" class="btn btn-outline-danger btn-sm">-</a>
-                            <!-- <button class="btn btn-outline-danger btn-sm" type="button"><strong>-</strong></button> -->
-                          </div>
-                          <!-- <input type="text" class="form-control" size="1" placeholder="" aria-label="" aria-describedby="basic-addon1"> -->
-                            <a href="#" class="btn btn-outline-success btn-sm">+</a>
-                            <!-- <button class="btn btn-outline-success btn-sm" type="button"><strong>+</strong></button> -->
-                        </div>
-                      </td>
-                      <td width="20px">{{ $instrument['qty'] }}</td>
-                    </tr>
-                  @endforeach
-                  </tbody>
-                </table>
-
+                  <div class="row">
+                      <div class="col-sm-6 col-md-12 col-md-offset-3 col-sm-offset-3">
+                          <ul class="list-group">
+                            <li><strong>Item No</strong></li>
+                              @foreach($instruments as $instrument)
+                                  <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                      <strong>{{ $instrument['item']['instrumentId'] }}</strong>
+                                      <strong>{{ $instrument['item']['instrumentName'] }}</strong>
+                                      <span>Rs: {{ $instrument['item']['price'] }}</span>
+                                      <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Action <span class="caret"></span>
+                                        </button>
+                                          <ul class="dropdown-menu">
+                                            <li><a href="#">Reduce by 1</a></li>
+                                            <li><a href="#">Reduce all</a></li>
+                                          </ul>
+                                      </div>
+                                      <span class="badge badge-pill badge-info">{{ $instrument['qty'] }}</span>
+                                    </li>
+                                  </ul>
+                              @endforeach
+                          </ul>
+                      </div>
+                  </div>
                   <div class="row">
                       <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
                         <hr>
-                        <h3>Subtotal (<strong class="badge badge-pill badge-info">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}} items</strong>)LKR: {{ $totalPrice }}</h3>
+
                       </div>
                   </div>
                   <hr>

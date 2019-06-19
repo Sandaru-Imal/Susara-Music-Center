@@ -25,11 +25,20 @@
    'uses' => 'InstrumentsController@getAddToCart',
    'as' => 'instrument.addToCart'
  ]);
-//Cart route and link to CartController
- Route::get('/shopping-cart', [
-   'uses' => 'CartController@getCart',
-   'as' => 'shop.shoppingCart'
+
+ //Cart route and link to CartController
+  Route::get('/shopping-cart', [
+    'uses' => 'InstrumentsController@getCart',
+    'as' => 'shop.shoppingCart'
+  ]);
+
+//Cart Qty reduce by one
+ Route::get('/reduce/{instrumentId}', [
+   'uses' => 'InstrumentsController@getReduceByOne',
+   'as' => 'instrument.reduceQtyByOne'
  ]);
+
+
  //Checkout route and link to CartController
   Route::get('/checkout', [
     'uses' => 'CartController@getCheckout',
@@ -39,7 +48,13 @@
  Route::post('/checkout', [
    'uses' => 'CartController@postCheckout',
    'as' => 'checkout'
- ]); 
+ ]);
+ //PayPal route to CheckoutController
+ // Route::get('pay-with-paypal', 'CheckoutController@paywithPaypal')
+ Route::get('/pay-with-paypal', [
+   'uses' => 'CheckoutController@paywithPaypal',
+   'as' => 'checkout'
+ ]);
 Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 Route::get('admins/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');

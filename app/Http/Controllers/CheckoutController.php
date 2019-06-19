@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Srmklive\PayPal\Services\ExpressCheckout;
 
 class CheckoutController extends Controller
 {
@@ -12,6 +13,38 @@ class CheckoutController extends Controller
       //
       // }
     }
+    // public function paywithPaypal(){
+    //
+    //   $provider = new ExpressCheckout;      // To use express checkout.
+    //
+    //   $data = [];
+    //   $data['items'] = [];
+    //
+    //   foreach (Instruments::content() as $key->$cart) {
+    //     $itemDetails=[
+    //       'instrumentName' => ,
+    //       'price' => 9.99,
+    //       'desc'  => 'Description for product 1'
+    //       'qty' => 1
+    //     ];
+    //   }
+    //
+    //   $data['invoice_id'] = 1;
+    //   $data['invoice_description'] = "Order #{$data['invoice_id']} Invoice";
+    //   $data['return_url'] = url('/payment/success');
+    //   $data['cancel_url'] = url('/cart');
+    //
+    //   $total = 0;
+    //   foreach($data['items'] as $item) {
+    //     $total += $item['price']*$item['qty'];
+    //   }
+    //
+    //   $data['total'] = $total;
+    //
+    //   //give a discount of 10% of the order amount
+    //   $data['shipping_discount'] = round((10 / 100) * $total, 2);
+    // }
+
     public function formValidation(){
       // require 'lib/Stripe.php';
 

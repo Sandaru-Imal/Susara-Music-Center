@@ -30,6 +30,25 @@ class InstrumentsController extends Controller
       // dd($request->session()->get('cart'));//to show data in browser
       return redirect()->route('instrument.percution');
     }
+    //cart reduce by one
+    public function getReduceByOne($instrumentId){
+      $oldCart = Session::has('cart') ? Session::get('cart') : null;
+      $cart = new Cart($oldCart);
+      $cart->reduceQtyByOne($instrumentId);
+
+      Session::put('cart', $cart);
+      return redirect()->route('shop.shoppingCart');//redirect routes to /shopping-cart
+    }
+    public function getCart(){
+      if (!Session::has('cart')) {
+        return view('shop.shopping-cart', ['instruments' => null]);
+      }
+      $oldCart = Session::get('cart');
+      $cart = new Cart($oldCart);
+      // dd($request->session()->get('cart'));//to show data in browser
+      return view('shop.shopping-cart', ['instruments' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+
+    }
     public function removeFromCart(Request $request, $instrumentId){
       $instrument = Instruments::find($instrumentId);
       $oldCart = Session::has('cart') ? Session::get('cart') : null;

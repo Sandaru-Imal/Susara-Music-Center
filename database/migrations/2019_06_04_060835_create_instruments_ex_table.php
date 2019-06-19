@@ -15,12 +15,12 @@ class CreateInstrumentsExTable extends Migration
     {
         Schema::create('instruments_ex', function (Blueprint $table) {
             $table->integer('instrumentId')->unsigned();
-			$table->primary('instrumentId');
+			      $table->primary('instrumentId');
             $table->string('category');
             $table->double('price');
             $table->timestamps();
-            $table->integer('adminId')->unsigned();
-            $table->foreign('adminId')->references('adminId')->on('admins');
+            // $table->integer('adminId')->unsigned();
+            // $table->foreign('adminId')->references('adminId')->on('admins');
         });
     }
 
