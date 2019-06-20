@@ -14,13 +14,11 @@
                                 aria-expanded="false"><i class="fa fa-user-circle-o"></i> <span class="d-none d-md-inline">Join</span> </a>
 
                                 <div class="collapse" id="menu">
-                                        <a href="#" class="list-group-item" data-parent="#menu1">Login</a>
+                                        <a href="{{ route('login') }}" class="list-group-item" data-parent="#menu1">Login</a>
 
-                                        <a href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Sign-up</a>
+                                        <a href="{{ route('register') }}" class="list-group-item" data-parent="#menu1">Sign-up</a>
                                             <div class="collapse" id="menu1sub1">
-                                                <a href="#" class="list-group-item" data-parent="#menu1sub1">Customer</a>
-                                                <a href="#" class="list-group-item" data-parent="#menu1sub1">Student</a>
-
+                                                
                                             </div>
 
                                     </div>
