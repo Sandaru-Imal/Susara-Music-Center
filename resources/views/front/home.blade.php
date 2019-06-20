@@ -54,6 +54,7 @@
                         <a href="{{url("/tuner/")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Add</span></a>
                         <!-- Shopping Cart Link-->
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar">
+                        <!-- <a href="{{ route('shop.shoppingCart') }}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"> -->
                           <i class="fa fa-shopping-cart"></i> Shopping Cart
                           <span class="badge badge-pill badge-light">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                         </a>
