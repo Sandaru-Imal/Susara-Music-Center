@@ -9,7 +9,6 @@ class Admin extends Authenticatable
 {
     protected $guard = 'admin';
     protected $table = 'admins';
-    // public $timestamps = false;
     use Notifiable;
     protected $primaryKey = 'adminId';
     public $incrementing = true;
