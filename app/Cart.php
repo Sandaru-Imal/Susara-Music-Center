@@ -37,7 +37,7 @@ class Cart
         $this->totalQty--;
         $this->totalPrice -= $this->items[$instrumentId]['item']['price'];
 
-        if($this->items[$instrumentId]['qty'] == 0){
+        if($this->items[$instrumentId]['qty'] <= 0){
           unset($this->items[$instrumentId]);
         }
 

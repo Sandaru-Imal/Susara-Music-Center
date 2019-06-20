@@ -5,6 +5,8 @@
 <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
 <script type="text/javascript" src="{{asset("js/checkout.js")}}"></script>
 <script type="text/javascript" src="{{asset("js/checkoutform.js")}}"></script>
+<script src="https://www.paypalobjects.com/api/checkout.js">></script>
+<script type="text/javascript" src="{{asset("js/paypalbutton.js")}}"></script>
     <!--side bar -->
     <div class="col-3">
 
@@ -247,11 +249,14 @@
                                               </div>
                                             </div>
                                           </div>
-                                            <div class="col-md-12 mb-3">
+                                            <div class="col-md-12 mb-3" id="stripe-button">
                                               <hr class="mb-4">
                                               {{ csrf_field() }}
-                                              <button class="btn btn-primary btn-lg" type="submit">Confirm & Pay</button>
+                                              <button class="btn btn-primary btn-lg" type="submit"><img src="{{asset("dist/img/checkout-img/credit-card.png")}}" alt=""> Confirm & Pay</button>&nbsp;&nbsp;
+                                              <!-- <button class="btn btn-primary btn-lg" type="submit"><img src="{{asset("dist/img/checkout-img/paypal.png")}}" alt=""> Confirm & Pay with PayPal</button> -->
+                                              <!-- <a href="{{ route('shop.shopping-cart') }}">Paypal</a> -->
                                             </div>
+                                            <div id="paypal-button"></div>
                                           <!-- </div> -->
 
                                       </form>

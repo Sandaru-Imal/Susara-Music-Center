@@ -1,7 +1,10 @@
 @extends('layout.main')
 
-@section('title', 'Shopping Cart')
+@section('title', 'Susara Music Center | Shopping Cart')
 @section('content')
+<script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript" src="{{asset("js/checkout.js")}}"></script>
+<script type="text/javascript" src="{{asset("js/checkoutform.js")}}"></script>
     <!--side bar -->
     <div class="col-3">
 
@@ -71,79 +74,15 @@
                     <p class="lead">Life is the song Love is the melody.</p>
                     <hr>
                         <!--carousel-->
-            <div class="container">
-              <h1 class="text-center">My Cart</h1><br>
-              @if(Session::has('success'))
-                <div class="row">
-                  <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
-                    <div id="charge-message" class="alert alert-success">
-                      {{ Session::get('success') }}
-                    </div>
-                  </div>
-                </div>
-              @endif
-                <!-- Cart Start -->
-                @if(Session::has('cart'))
-                <table class="table table-hover">
-                  <thead class="thead-dark">
-                    <tr>
-                      <th scope="col">Item No</th>
-                      <th scope="col">Item Name</th>
-                      <th scope="col">Price</th>
-                      <th scope="col">Option</th>
-                      <th scope="col">Quantity</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  @foreach($instruments as $instrument)
-                    <tr>
-                      <th scope="row">{{ $instrument['item']['instrumentId'] }}</th>
-                      <td>{{ $instrument['item']['instrumentName'] }}</td>
-                      <td>LKR: {{ $instrument['item']['price'] }}</td>
-                      <td width="150px">
-                        <div class="input-group sm-3">
-                          <div class="input-group-prepend">
-                            <a href="{{ route('instrument.reduceQtyByOne', ['instrumentId' => $instrument['item']['instrumentId']]) }}" class="btn btn-outline-danger btn-sm">-</a>
-                            <!-- <button class="btn btn-outline-danger btn-sm" type="button"><strong>-</strong></button> -->
-                          </div>
-                          <!-- <input type="text" class="form-control" size="1" placeholder="" aria-label="" aria-describedby="basic-addon1"> -->
-                            <a href="#" class="btn btn-outline-success btn-sm">+</a>
-                            <!-- <button class="btn btn-outline-success btn-sm" type="button"><strong>+</strong></button> -->
-                        </div>
-                      </td>
-                      <td width="20px">{{ $instrument['qty'] }}</td>
-                    </tr>
-                  @endforeach
-                  </tbody>
-                </table>
-
-                  <div class="row">
-                      <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                        <hr>
-                        <h3>Subtotal (<strong class="badge badge-pill badge-info">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}} items</strong>)  LKR: {{ $totalPrice }}</h3>
-                      </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                      <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                          <a href="{{ route('checkout') }}" type="button" class="btn btn-success">CheckOut</a>
-                      </div>
-                      <div class="col-md-3 offset-md-3">
-                          <a href="#"  type="button" class="btn btn-danger">Empty Cart</a>
-                      </div>
-                  </div>
-                @else
-                    <div class="row">
-                        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                            <h2>No items in Cart!</h2>
-                        </div>
-                    </div>
-                @endif
-                <!-- Cart End -->
-            </div>
+                        <h2>Order Successfully</h2>
             <!--carousel end -->
-
-
     <br>
     <br>
+    @endsection
+
+    @section('scripts')
+      <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+      <script type="text/javascript" src="{{ URL::to('js/checkout.js') }}"></script>
+      <script type="text/javascript" src="{{ URL::to('js/checkoutform.js') }}"></script>
     @endsection

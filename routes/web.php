@@ -38,6 +38,12 @@
    'as' => 'instrument.reduceQtyByOne'
  ]);
 
+ //Cart Qty reduce all
+  Route::get('/remove-all/{instrumentId}', [
+    'uses' => 'InstrumentsController@getRemoveAllItem',
+    'as' => 'instrument.removeAll'
+  ]);
+
 
  //Checkout route and link to CartController
   Route::get('/checkout', [
@@ -51,10 +57,11 @@
  ]);
  //PayPal route to CheckoutController
  // Route::get('pay-with-paypal', 'CheckoutController@paywithPaypal')
- Route::get('/pay-with-paypal', [
-   'uses' => 'CheckoutController@paywithPaypal',
-   'as' => 'checkout'
- ]);
+ Route::get('/pay-with-paypal', ['CheckoutController@paywithPaypal'])->name('shop.shopping-cart');
+ //
+ // Route::get('/success-payment', ['CheckoutController@successPay'])->name('shop.success-order');
+
+
 Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 Route::get('admins/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
