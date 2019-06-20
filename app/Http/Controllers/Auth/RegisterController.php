@@ -47,11 +47,11 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'fname' => ['required', 'string', 'max:255'],
             'lname' => ['required', 'string', 'max:255'],
-            'no' => ['required', 'string', 'max:255'],
+            'no' => ['required', 'string', 'max:10'],
             'street' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:255'],
-            'nic' => ['required', 'string', 'max:255'],
-            'phoneNo' => ['required', 'string', 'max:255'],
+            'nic' => ['required', 'string', 'max:10'],
+            'phoneNo' => ['required', 'string', 'max:12'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:customers'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -93,6 +93,6 @@ class RegisterController extends Controller
     {
         $this->guard()->logout();
         return redirect()->route('login')
-        ->withSuccess('Registered. Please check your e mail to activate the account');
+        ->withSuccess( 'You Have successfully registered. Please check your e mail to activate the account');
     }
 }

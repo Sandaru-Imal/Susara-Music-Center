@@ -47,7 +47,7 @@
                         </form>$nbsp
 
                         <li class="nav-item">
-                                <a class="text-white" href="{{ route('home') }}">{{ __('Home') }}</a>
+                                <a class="text-white" href="{{ url('/') }}">{{ __('Home') }}</a>
                         </li>$nbsp
                         @guest
 
