@@ -283,81 +283,6 @@
                                       <!-- Footer -->
                             </div>
 
-                            <!-- registration form -->
-
-              <!-- end of registration form -->
-
-              <!-- Login form -->
-<!-- Modal -->
-<!-- login with custom login controller -->
-<!-- <form method="POST" action="{{ route('login') }}"> -->
-
-<!-- login with inbuilt login -->
-
-<div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <!--Content-->
-    <div class="modal-content form-elegant">
-      <!--Header-->
-      <div class="modal-header text-center">
-        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign in</strong></h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <!--Body-->
-      <div class="modal-body mx-4">
-      <form method="POST" action="{{ route('custom.login') }}">
-        @csrf
-        <!--Body-->
-        <div class="md-form mb-5">
-          <input type="email" id="Form-email1" class="form-control validate" name="email">
-          <label data-error="wrong" data-success="right" for="Form-email1">Your email</label>
-        </div>
-
-        <div class="md-form pb-3">
-          <input type="password" id="Form-pass1" class="form-control validate" name="password">
-          <label data-error="wrong" data-success="right" for="Form-pass1">Your password</label>
-          <p class="font-small blue-text d-flex justify-content-end">Forgot <a href="#" class="blue-text ml-1">
-              Password?</a></p>
-        </div>
-
-        <div class="text-center mb-3">
-          <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a" >Sign in</button>
-        </div>
-        <!-- <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-unique" type="submit">Login here <i class="fas fa-paper-plane-o ml-1"></i></button>
-      </div> -->
-
-        <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in
-          with:</p>
-        </form>
-        <div class="row my-3 d-flex justify-content-center">
-          <!--Facebook-->
-          <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-facebook-f text-center"></i></button>
-          <!--Twitter-->
-          <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-twitter"></i></button>
-          <!--Google +-->
-          <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fab fa-google-plus-g"></i></button>
-        </div>
-      </div>
-      
-      <!--Footer-->
-      
-    <!--/.Content-->
-  </div>
-</div>
-<!-- Modal -->
-
-              <!-- end of login form -->
-
-  <main class="py-4">
-     @yield('content')
-  </main>
-
-
   </div><!--side bar -->
                     @if(count($errors)>0)
                         @foreach($errors->all() as $error)
@@ -372,95 +297,10 @@
 
 
 </div>
-
-
-
-
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
-<div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Register Here</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form class="form-horizontal " action="{{route('custom.register')}}" method="post">
-                @csrf
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <i class="fas fa-user prefix grey-text"></i>
-          <input type="text" id="form34" class="form-control validate" name="fname">
-          <label data-error="wrong" data-success="right" for="form34">Your First name</label>
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="fas fa-user prefix grey-text"></i>
-          <input type="text" id="form34" class="form-control validate" name="lname">
-          <label data-error="wrong" data-success="right" for="form34">Your Last name</label>
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" id="form29" class="form-control validate" name="email">
-          <label data-error="wrong" data-success="right" for="form29">Your email</label>
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="fas fa-tag prefix grey-text"></i>
-          <input type="text" id="form32" class="form-control validate" name="phoneNo">
-          <label data-error="wrong" data-success="right" for="form32">Mobile Number</label>
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="fas fa-tag prefix grey-text"></i>
-          <input type="text" id="form32" class="form-control validate" name="nic">
-          <label data-error="wrong" data-success="right" for="form32">NIC Number</label>
-        </div>
-
-        <div class="md-form">
-          <i class="fas fa-pencil prefix grey-text"></i>
-          <input type="text" id="form32" class="form-control validate" name="no">
-          <label data-error="wrong" data-success="right" for="form8">Home No</label>
-        </div>
-
-        <div class="md-form">
-          <i class="fas fa-pencil prefix grey-text"></i>
-          <input type="text" id="form32" class="form-control validate" name="street">
-          <label data-error="wrong" data-success="right" for="form8">Street</label>
-        </div>
-
-        <div class="md-form">
-          <i class="fas fa-pencil prefix grey-text"></i>
-          <input type="text" id="form32" class="form-control validate" name="city">
-          <label data-error="wrong" data-success="right" for="form8">City</label>
-        </div>
-
-        <div class="md-form">
-          <i class="fas fa-pencil prefix grey-text"></i>
-          <input type="password" id="form32" class="form-control validate" name="password">
-          <label data-error="wrong" data-success="right" for="form8">Password</label>
-        </div>
-
-        <div class="md-form">
-          <i class="fas fa-pencil prefix grey-text"></i>
-          <input type="password" id="form32" class="form-control validate" name="password_confirmation">
-          <label data-error="wrong" data-success="right" for="form8">Confirm Password</label>
-        </div>
-
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-unique" type="submit">Sign Up <i class="fas fa-paper-plane-o ml-1"></i></button>
-      </div>
-    </div>
-    </form>
-  </div>
-</div>
 
 </html>

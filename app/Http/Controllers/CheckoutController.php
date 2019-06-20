@@ -7,6 +7,7 @@ use Srmklive\PayPal\Services\ExpressCheckout;
 
 class CheckoutController extends Controller
 {
+<<<<<<< HEAD
 //     public function successPay(Request $request){
 //       return "Order Complete"
 //     }
@@ -41,4 +42,9 @@ class CheckoutController extends Controller
 // // $data['shipping_discount'] = round((10 / 100) * $total, 2);
 //
 //     }
+=======
+    // public function getTuner(){
+    //   return view('tuner.index.blade.php');
+    // }
+>>>>>>> 1b22dfd303258f9181b923d71911592406d55339
 }

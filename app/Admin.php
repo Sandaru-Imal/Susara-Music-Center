@@ -9,7 +9,6 @@ class Admin extends Authenticatable
 {
     protected $guard = 'admin';
     protected $table = 'admins';
-    // public $timestamps = false;
     use Notifiable;
     protected $primaryKey = 'adminId';
     public $incrementing = true;
@@ -20,7 +19,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'adminId','fname', 'lname','no', 'street','city','phoneNO','email','password','userId'
+        'adminId','fname', 'lname','no', 'street','city','phoneNO','email','password','userId','nic'
     ];
 
     /**

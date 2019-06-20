@@ -64,9 +64,24 @@
 
 Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
-Route::get('admins/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-Route::post('admins/login', 'Auth\AdminLoginController@login')->name('admin.login');
-Route::get('admins/register', 'Auth\AdminsRegisterController@showRegisterForm')->name('admin.register');
-Route::post('admins/register', 'Auth\AdminsRegisterController@register')->name('admin.register');
+Route::prefix('admins')->group(function(){
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login');
+Route::get('/register', 'Auth\AdminsRegisterController@showRegisterForm')->name('admin.register');
+Route::post('/register', 'Auth\AdminsRegisterController@register')->name('admin.register');
+Route::get('/', 'AdminController@index')->name('admin.dashboard');
+});
+
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
+Route::get('tuner/', function () {
+  return require public_path('tuner');
+});
+
+// Route::get('/tuner', 'CheckoutController@getTuner')->name('tuner.index');
+
+// Route::get('/tuner', function () {
+//   return View::make('tuner.index');
+// });

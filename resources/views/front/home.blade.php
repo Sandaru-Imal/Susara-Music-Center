@@ -14,13 +14,11 @@
                                 aria-expanded="false"><i class="fa fa-user-circle-o"></i> <span class="d-none d-md-inline">Join</span> </a>
 
                                 <div class="collapse" id="menu">
-                                        <a href="#" class="list-group-item" data-parent="#menu1">Login</a>
+                                        <a href="{{ route('login') }}" class="list-group-item" data-parent="#menu1">Login</a>
 
-                                        <a href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Sign-up</a>
+                                        <a href="{{ route('register') }}" class="list-group-item" data-parent="#menu1">Sign-up</a>
                                             <div class="collapse" id="menu1sub1">
-                                                <a href="#" class="list-group-item" data-parent="#menu1sub1">Customer</a>
-                                                <a href="#" class="list-group-item" data-parent="#menu1sub1">Student</a>
-
+                                                
                                             </div>
 
                                     </div>
@@ -48,12 +46,12 @@
                             </div>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-book"></i> <span class="d-none d-md-inline">Tutorials</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-phone"></i> <span class="d-none d-md-inline">Contact</span></a>
-                        <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="d-none d-md-inline">Tuner</span></a>
+                        <a href="{{url('tuner/')}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="d-none d-md-inline">Tuner</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Message</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-gear"></i> <span class="d-none d-md-inline">Add</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="d-none d-md-inline">Events</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Add</span></a>
-                        <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Add</span></a>
+                        <a href="{{url("/tuner/")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Add</span></a>
                         <!-- Shopping Cart Link-->
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar">
                           <i class="fa fa-shopping-cart"></i> Shopping Cart
@@ -89,14 +87,14 @@
                     <div class="carousel-inner">
 
                         <div class="carousel-item active" data-intervel="5000">
-                            <img src="{{asset("dist/img/1.png")}}" class="d-block w-100" alt="...">
+                            <img src="{{asset('dist/img/1.png')}}" class="d-block w-100" alt="...">
                             <div class="carousel-caption">
                                 <h4>LIFE</h4>
                                 <p>Life is a song Love is the meolody </p>
                             </div>
                         </div>
                         <div class="carousel-item" data-interval="5000">
-                            <img src="{{asset("dist/img/2.png")}}" class="d-block w-100" alt="...">
+                            <img src="{{asset('dist/img/2.png')}}" class="d-block w-100" alt="...">
 
                             <div class="carousel-caption">
                                 <h4>MUSIC</h4>
@@ -105,7 +103,7 @@
                         </div>
 
                         <div class="carousel-item" data-interval="5000">
-                            <img src="{{("dis/img/3.png")}}" class="d-block w-100" alt="...">
+                            <img src="{{('dis/img/3.png')}}" class="d-block w-100" alt="...">
                             <div class="carousel-caption">
                                 <h4>CHOICE</h4>
                                 <p>Your all choice is our responsibility</p>
