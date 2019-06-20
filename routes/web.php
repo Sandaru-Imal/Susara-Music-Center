@@ -66,8 +66,8 @@ Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout
 
 Route::prefix('admins')->group(function(){
 
-Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login');
+Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admins.login');
+Route::post('/login', 'Auth\AdminLoginController@login')->name('admins.login.submit');
 Route::get('/register', 'Auth\AdminsRegisterController@showRegisterForm')->name('admin.register');
 Route::post('/register', 'Auth\AdminsRegisterController@register')->name('admin.register');
 Route::get('/', 'AdminController@index')->name('admin.dashboard');

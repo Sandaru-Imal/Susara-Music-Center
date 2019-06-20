@@ -15,12 +15,17 @@ class LoginController extends Controller
     |
     */
     use AuthenticatesUsers;
+
+    // protected function loggedOut(Request $request) {
+    //     return redirect('/where/ever/you/want/to/go');
+    // }
+    
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'home';
     /**
      * Create a new controller instance.
      *
@@ -30,4 +35,8 @@ class LoginController extends Controller
     {
         $this->middleware('guest:customer')->except('logout');
     }
+
+    // public function redirectTo(){
+    //     return '/front/home';
+    // }
 }
