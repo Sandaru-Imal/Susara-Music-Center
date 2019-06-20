@@ -8,9 +8,8 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <!-- <form method="POST" action="{{ route('register') }}"> -->
-                        <!-- @csrf -->
-                        {!!Form::open(['route'=>'register'.'method'=>'POST'])!!}
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
 
                         <div class="form-group row">
                             <label for="fname" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
@@ -152,8 +151,8 @@
                                 </button>
                             </div>
                         </div>
-                        {!!Form!!}
-                    <!-- </form> -->
+                        
+                    </form>
                 </div>
             </div>
         </div>

@@ -32,7 +32,7 @@ class AdminsRegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'admin.dashboard';
 
     /**
      * Create a new controller instance.
@@ -110,7 +110,7 @@ class AdminsRegisterController extends Controller
         $user->save();
         $admin->save();
         
-        return redirect('adminDashboard');  
+        return redirect('admin.dashboard');  
     }
 
     public function validation($request){
