@@ -68,3 +68,13 @@ Route::get('/', 'AdminController@index')->name('admin.dashboard');
 
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
+Route::get('tuner/', function () {
+  return require public_path('tuner');
+});
+
+// Route::get('/tuner', 'CheckoutController@getTuner')->name('tuner.index');
+
+// Route::get('/tuner', function () {
+//   return View::make('tuner.index');
+// });
