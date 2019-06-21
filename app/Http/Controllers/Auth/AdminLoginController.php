@@ -51,12 +51,12 @@ class AdminLoginController extends Controller
             'password'=>'required|min:6'
 
         ]);
-        return redirect()->intended('admin.dashboard');
+        
 
-        // if (Auth::guard('admin')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember)) {
-        //     return redirect()->intended('admin.dashboard');
-        // }
+        if (Auth::guard('admin')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember)) {
+            return redirect()->intended('admin.dashboard');
+        }
 
-        // return redirect()->back()->withInput($request->only('email','remember'));
+        return redirect()->back()->withInput($request->only('email','remember'));
     }
 }

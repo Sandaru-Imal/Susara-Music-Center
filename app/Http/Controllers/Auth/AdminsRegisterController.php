@@ -83,6 +83,7 @@ class AdminsRegisterController extends Controller
     // }
 
     public function register(Request $request){
+        
         $admin = new Admin();
         $user = new Users();
 
