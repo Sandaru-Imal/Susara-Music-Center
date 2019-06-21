@@ -104,7 +104,7 @@
                         </div>
 
                         <div class="carousel-item" data-interval="5000">
-                            <img src="{{('dis/img/3.png')}}" class="d-block w-100" alt="...">
+                            <img src="{{('dist/img/3.png')}}" class="d-block w-100" alt="...">
                             <div class="carousel-caption">
                                 <h4>CHOICE</h4>
                                 <p>Your all choice is our responsibility</p>
