@@ -88,40 +88,42 @@
                                     <span class="text-muted">Your cart</span>
                                     <span class="badge badge-secondary badge-pill">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                                   </h4>
+                                  @if(Session::has('cart'))
                                   <ul class="list-group mb-3">
                                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                                       <div>
-                                        <h6 class="my-0">Product name</h6>
-                                        <small class="text-muted">Brief description</small>
+                                        <h6 class="my-0">DTX400K</h6>
+                                        <small class="text-muted">Percussion product</small>
                                       </div>
-                                      <span class="text-muted">$12</span>
+                                      <span class="text-muted">LKR 23</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                                       <div>
-                                        <h6 class="my-0">Second product</h6>
-                                        <small class="text-muted">Brief description</small>
+                                        <h6 class="my-0">GM2FS</h6>
+                                        <small class="text-muted">Percussion product</small>
                                       </div>
-                                      <span class="text-muted">$8</span>
+                                      <span class="text-muted">LKR 37</span>
                                     </li>
-                                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                    <!-- <li class="list-group-item d-flex justify-content-between lh-condensed">
                                       <div>
                                         <h6 class="my-0">Third item</h6>
                                         <small class="text-muted">Brief description</small>
                                       </div>
-                                      <span class="text-muted">$5</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between bg-light">
+                                      <span class="text-muted">LKR 5</span>
+                                    </li> -->
+                                    <!-- <li class="list-group-item d-flex justify-content-between bg-light">
                                       <div class="text-success">
                                         <h6 class="my-0">Promo code</h6>
                                         <small>EXAMPLECODE</small>
                                       </div>
                                       <span class="text-success">-$5</span>
-                                    </li>
+                                    </li> -->
                                     <li class="list-group-item d-flex justify-content-between">
-                                      <span>Total (USD)</span>
-                                      <strong>$20</strong>
+                                      <span>Total (LKR)</span>
+                                      <strong>LKR 60</strong>
                                     </li>
                                   </ul>
+                                  @endif
 
                                   <form class="card p-2">
                                     <div class="input-group">
