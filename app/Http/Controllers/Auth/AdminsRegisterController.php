@@ -111,7 +111,7 @@ class AdminsRegisterController extends Controller
         $user->save();
         $admin->save();
         
-        return redirect('admin.dashboard');  
+        return view('admin.layout.admin');  
     }
 
     public function validation($request){
