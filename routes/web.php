@@ -11,7 +11,8 @@
 |
 */
 
-  Auth::routes(['verify' => true]);
+// Route::post('/addTutorial', 'lessonController@add');
+Auth::routes(['verify' => true]);
  Route::get('/', 'FrontController@index' )->name('home');
  Route::get('/percution', 'FrontController@percution' )->name('percution');
  Route::get('/percution', [
@@ -62,7 +63,11 @@
  // Route::get('/success-payment', ['CheckoutController@successPay'])->name('shop.success-order');
 
 
-Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+Route::prefix('user')->group(function(){
+Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+Route::get('/editProfile', 'userProfileController@editUserProfile')->name('edit.profile');
+Route::post('/editProfile', 'userProfileController@update')->name('update.profile');
+});
 
 Route::prefix('admins')->group(function(){
 
@@ -70,8 +75,11 @@ Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admins.lo
 Route::post('/login', 'Auth\AdminLoginController@login')->name('admins.login.submit');
 Route::get('/register', 'Auth\AdminsRegisterController@showRegisterForm')->name('admin.register');
 Route::post('/register', 'Auth\AdminsRegisterController@register')->name('admin.register');
+Route::get('/addTutorial', 'AdminController@index')->name('admin.dashboard');
 Route::get('/', 'AdminController@index')->name('admin.dashboard');
 });
+
+
 
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');

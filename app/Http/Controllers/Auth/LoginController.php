@@ -36,7 +36,7 @@ class LoginController extends Controller
         $this->middleware('guest:customer')->except('logout');
     }
 
-    // public function redirectTo(){
-    //     return '/front/home';
-    // }
+    public function redirectTo(){
+        return '/';
+    }
 }
