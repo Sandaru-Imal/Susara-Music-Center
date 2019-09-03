@@ -14,13 +14,13 @@
                             <h3 class="fieldset-title">Personal Info</h3>
                             <div class="form-group avatar">
                                 <figure class="figure col-md-2 col-sm-3 col-xs-12">
-                                    <img class="img-rounded img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                                    {{ Auth::user()->fname }}
+                                    <!-- <img class="img-rounded img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""> -->
+                                    {{ Auth::user()->fname }} {{ Auth::user()->lname }}
                                 </figure>
-                                <div class="form-inline col-md-10 col-sm-9 col-xs-12">
+                                <!-- <div class="form-inline col-md-10 col-sm-9 col-xs-12">
                                     <input type="file" class="file-uploader pull-left">
                                     <button type="submit" class="btn btn-sm btn-default-alt pull-left">Update Image</button>
-                                </div>
+                                </div> -->
                             </div>
                             
         
@@ -98,7 +98,7 @@
             </div>
         </section> 
     </div>
-    {{Form::hidden('_method','PUT')}}
+    <!-- {{Form::hidden('_method','PUT')}} -->
     </form>
 </div>
 @endforeach

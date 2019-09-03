@@ -7,21 +7,26 @@
     </div>
         <div class="container-fluid">
             <div class="row d-flex d-md-block flex-nowrap wrapper">
-                <div class="col-md-2 float-left col-1 pl-0 pr-0 collapse width " id="sidebar">
+                <div class="col-md-2 float-left col-2 pl-0 pr-0 collapse width " id="sidebar" >
                         <div class="list-group border-0 card text-center text-md-left">
-
+                        
                             <a href="#menu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar"
                                 aria-expanded="false"><i class="fa fa-user-circle-o"></i> <span class="d-none d-md-inline">Join</span> </a>
-
+                        
                                 <div class="collapse" id="menu">
+                        @guest 
                                         <a href="{{ route('login') }}" class="list-group-item" data-parent="#menu1">Login</a>
-
-                                        <a href="{{ route('register') }}" class="list-group-item" data-parent="#menu1">Sign-up</a>
+                                        @if (Route::has('register'))
+                                        <a href="{{ route('register') }}" class="list-group-item" data-parent="#menu1">Register</a>
                                             <div class="collapse" id="menu1sub1">
                                                 
                                             </div>
+                                            @endif
 
+                                            @else
+                                            
                                     </div>
+                        @endguest
 
                             <a href="#menu1" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar"
                                 aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="d-none d-md-inline">Products</span> </a>
@@ -48,19 +53,32 @@
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-phone"></i> <span class="d-none d-md-inline">Contact</span></a>
                         <a href="{{url('tuner/')}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="d-none d-md-inline">Tuner</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Message</span></a>
-                        <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-gear"></i> <span class="d-none d-md-inline">Add</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="d-none d-md-inline">Events</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Add</span></a>
                         <a href="{{url("/tuner/")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Add</span></a>
-                        <!-- Shopping Cart Link-->
+                       
+                       <!-- Shopping Cart Link-->
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar">
                         <!-- <a href="{{ route('shop.shoppingCart') }}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"> -->
                           <i class="fa fa-shopping-cart"></i> Shopping Cart
                           <span class="badge badge-pill badge-light">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                         </a>
+
+                        @guest
+                        @if (Route::has('register'))
+
+                        @endif
+                        @else
+                        <a href="{{ route('edit.profile') }}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-gear"></i> <span class="d-none d-md-inline">Manage Your Profile
+                        <br>
+                        {{ Auth::user()->fname }} {{ Auth::user()->lname }}
+                        <br>
+                        
+                        </span></a> 
+                        @endguest
                     </div>
                 </div>
-                <main class="col-md-10 col px-5 pl-md-2 pt-2 main mx-auto">
+                <main class="col-md-150 col px-300 pl-md-2 pt-2 main mx-auto">
 
                     <a href="#" data-target="#sidebar" data-toggle="collapse" aria-expanded="false"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
                     <div class="page-header lead">
