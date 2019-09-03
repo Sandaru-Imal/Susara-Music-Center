@@ -80,6 +80,10 @@
                                     <a class="dropdown-item" href="{{ route('edit.profile') }}">
                                         {{ __('Edit Profile') }}
                                     </a>
+
+                                    <a class="dropdown-item" href="{{ route('changePassword') }}">
+                                        {{ __('Change My Password') }}
+                                    </a>
                                 </div>
                             </li>
                         @endguest

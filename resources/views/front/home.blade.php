@@ -50,16 +50,16 @@
                                 <a href="#" class="list-group-item" data-parent="#menu1">Parts</a>
                             </div>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-book"></i> <span class="d-none d-md-inline">Tutorials</span></a>
-                        <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-phone"></i> <span class="d-none d-md-inline">Contact</span></a>
+                        
                         <a href="{{url('tuner/')}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="d-none d-md-inline">Tuner</span></a>
-                        <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Message</span></a>
+                        <!-- <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Message</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="d-none d-md-inline">Events</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Add</span></a>
-                        <a href="{{url("/tuner/")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Add</span></a>
+                        <a href="{{url("/tuner/")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Add</span></a> -->
                        
                        <!-- Shopping Cart Link-->
-                        <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar">
-                        <!-- <a href="{{ route('shop.shoppingCart') }}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"> -->
+    
+                        <a href="{{ route('shop.shoppingCart') }}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar">
                           <i class="fa fa-shopping-cart"></i> Shopping Cart
                           <span class="badge badge-pill badge-light">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                         </a>
@@ -76,9 +76,11 @@
                         
                         </span></a> 
                         @endguest
+
+                        <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-phone"></i> <span class="d-none d-md-inline">Contact Us</span></a>
                     </div>
                 </div>
-                <main class="col-md-150 col px-300 pl-md-2 pt-2 main mx-auto">
+                <main class="col-md-150 col px-10 pl-md-2 pt-2 main mx-auto">
 
                     <a href="#" data-target="#sidebar" data-toggle="collapse" aria-expanded="false"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
                     <div class="page-header lead">
@@ -93,7 +95,7 @@
 
                         <!--carousel-->
             <div class="container">
-                <div class="carousel slide carousel-fade" data-ride="carousel" id="control"style="margin-bottom:20px" >
+                <div class="carousel slide carousel-fade" data-ride="carousel" id="control"style="margin-bottom:10px" >
 
                     <ol class="carousel-indicators">
 

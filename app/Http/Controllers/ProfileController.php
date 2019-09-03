@@ -1,5 +1,6 @@
 <?php
-namespace App\Http\Controllers\Profile;use Illuminate\Http\Request;
+namespace App\Http\Controllers\Profile;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Customer;

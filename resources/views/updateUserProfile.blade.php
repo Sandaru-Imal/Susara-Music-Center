@@ -3,8 +3,8 @@
 @section('content')
 @foreach($customers as $customer)
 <div class="container">
-<form method="PUT" action="{{ route('update.profile') }}">
-    @csrf
+<form class="form-horizontal" method="POST" action="{{ route('update.profile') }}">
+   {{ csrf_field() }}
     <div class="view-account">
         <section class="module">
             <div class="module-inner">
@@ -89,17 +89,23 @@
                         <hr>
                         <div class="form-group">
                             <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-                                <input class="btn btn-primary" type="submit" value="Update Profile">
-                                <a href="{{ route('update.profile','1')}}">
+                            <button type="submit" class="btn btn-primary">
+                                        Update Profile
+                                    </button>
+                                
                             </div>
                         </div>
-                    </form>
+                    
                 </div>
             </div>
         </section> 
     </div>
-    <!-- {{Form::hidden('_method','PUT')}} -->
+    
     </form>
+
+    
+   
+    
 </div>
 @endforeach
 

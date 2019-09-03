@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset("dist/css/style.css")}}">
     <link rel="stylesheet" href="{{asset("dist/css/styles.css")}}">
     <!-- <script src="{{asset("js/checkoutform.js")}}" charset="utf-8"></script> -->
+    <style>.carousel-item active > dist/img/ { width:100%; height:570px; } </style>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -34,8 +35,8 @@
 
                                             <!-- Grid column -->
                                             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 text-light">
-                                              <h6 class="text-uppercase mb-4 font-weight-bold">Company name</h6>
-                                              <p>Implement a web based music-learning environment with instrument simulator and an online instrument retail system. We mainly target to
+                                              <h6 class="text-uppercase mb-4 font-weight-bold">About Us</h6>
+                                              <p>A web based music-learning environment with instrument simulator and an online instrument retail system. We mainly target to
                                                   improve knowledge about music and vend music instrument to customer.
                                                 </p>
                                             </div>
@@ -67,14 +68,14 @@
                                             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3  text-light">
                                               <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
                                               <p>
-                                                <a href="#!">Your Account</a>
+                                                <a href="{{ route('edit.profile') }}">Your Account</a>
                                               </p>
-                                              <p>
+                                              <!-- <p>
                                                 <a href="#!">Become an Affiliate</a>
                                               </p>
                                               <p>
                                                 <a href="#!">Shipping Rates</a>
-                                              </p>
+                                              </p> -->
                                               <p>
                                                 <a href="#!">Help</a>
                                               </p>
