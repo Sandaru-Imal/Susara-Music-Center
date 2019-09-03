@@ -44,6 +44,18 @@ class userProfileController extends Controller
 
         return redirect()->back()->with("success","Profile Updated Successfully !");
     }
+
+    public function destroy($customerId){
+        // $customer = Auth::user();
+        $user = Customer::find(Auth::user()->customerId);
+
+        Auth::logout();
+    
+        if ($customer->destroy()) {
+    
+             return Redirect::route('/')->with('global', 'Your account has been deleted!');
+        }
+    }
   
 }
 

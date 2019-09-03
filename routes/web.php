@@ -67,8 +67,10 @@ Route::prefix('user')->group(function(){
 Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 Route::get('/editProfile', 'userProfileController@editUserProfile')->name('edit.profile');
 Route::post('/editProfile', 'userProfileController@update')->name('update.profile');
+Route::get('/deleteUserAccount/{customerId}','userProfileController@destroy')->name('user.delete');
 Route::get('/changePassword','UserChangePasswordController@showChangePasswordForm')->name('changePassword');
 Route::post('/changePassword','UserChangePasswordController@changePassword');
+
 });
 
 Route::prefix('admins')->group(function(){

@@ -84,6 +84,10 @@
                                     <a class="dropdown-item" href="{{ route('changePassword') }}">
                                         {{ __('Change My Password') }}
                                     </a>
+
+                                    <a class="dropdown-item" href="{{ route('user.delete') }}">
+                                        {{ __('Delete My Account') }}
+                                    </a>
                                 </div>
                             </li>
                         @endguest
