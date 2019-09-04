@@ -28,10 +28,12 @@
  ]);
 
  //Cart route and link to CartController
+ Route::group(['middleware' => 'auth'], function () {
   Route::get('/shopping-cart', [
     'uses' => 'InstrumentsController@getCart',
     'as' => 'shop.shoppingCart'
   ]);
+ });
 
 //Cart Qty reduce by one
  Route::get('/reduce/{instrumentId}', [

@@ -49,6 +49,7 @@
                         <li class="nav-item active">
                                 <a class="text-white" href="{{ url('/') }}">{{ __('Home') }}</a>
                         </li>$nbsp
+                        
                        
                             <li class="nav-item">
                                     <a class="text-white" href="{{ route('shop.shoppingCart') }}">{{ __('Cart') }}</a>
