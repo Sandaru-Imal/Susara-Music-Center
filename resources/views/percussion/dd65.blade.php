@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layouts.app')
 
 @section('title', 'Percussion Products - DD-65')
 @section('content')

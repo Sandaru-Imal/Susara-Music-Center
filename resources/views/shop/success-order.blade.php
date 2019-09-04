@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layouts.app')
 
 @section('title', 'Susara Music Center | Shopping Cart')
 @section('content')

@@ -9,7 +9,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 
 class CashierRegisterController extends Controller{
+
 use RegistersUsers;
+protected $guard = 'cashier';
     /**
      * Where to redirect users after registration.
      *
