@@ -2,6 +2,7 @@
 
 @section('content')
 @foreach($customers as $customer)
+
 <div class="container">
 <form class="form-horizontal" method="POST" action="{{ route('update.profile') }}">
    {{ csrf_field() }}
