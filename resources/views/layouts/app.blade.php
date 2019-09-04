@@ -21,12 +21,12 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-dark  shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark  shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config( 'Susara Music Center') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class=".navbar-collapse" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -46,53 +46,78 @@
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>$nbsp
 
-                        <li class="nav-item">
+                        <li class="nav-item active">
                                 <a class="text-white" href="{{ url('/') }}">{{ __('Home') }}</a>
                         </li>$nbsp
-                        @guest
-
+                       
                             <li class="nav-item">
-                                <a class="text-white" href="{{ route('login') }}">{{ __('Sign In') }}</a>
-                            </li>$nbsp
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="text-white" href="{{ route('register') }}">{{ __('Sign Up') }}</a>
-                                </li>
-                            @endif
-                        @else
-                        <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->fname }} {{ Auth::user()->lname }}<span class="caret"></span>
+                                    <a class="text-white" href="{{ route('shop.shoppingCart') }}">{{ __('Cart') }}</a>
+                            </li>
+
+                            $nbsp
+                            <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Products<span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                <a class="dropdown-item" href="{{ url('/precurtion') }}">
+                                        {{ __('Percurtion') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-
-                                    <a class="dropdown-item" href="{{ route('edit.profile') }}">
-                                        {{ __('Edit Profile') }}
+                                    <a class="dropdown-item" href="">
+                                        {{ __('String') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('changePassword') }}">
-                                        {{ __('Change My Password') }}
+                                    <a class="dropdown-item" href="">
+                                        {{ __('Wind') }}
                                     </a>
-
-                                   
                                 </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                            </li>$nbsp
+@guest
+
+  <ol class="nav-item">
+      <a class="text-white" href="{{ route('login') }}">{{ __('Sign In') }}</a>
+  </ol>$nbsp
+  @if (Route::has('register'))
+      <li class="nav-item">
+          <a class="text-white" href="{{ route('register') }}">{{ __('Sign Up') }}</a>
+      </li>
+  @endif
+  @else
+<li class="nav-item dropdown">
+    <a id="navbarDropdown" class="text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+        {{ Auth::user()->fname }} {{ Auth::user()->lname }}<span class="caret"></span>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+        <a class="dropdown-item" href="{{ route('logout') }}"
+           onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+
+        <a class="dropdown-item" href="{{ route('edit.profile') }}">
+            {{ __('Edit Profile') }}
+        </a>
+
+        <a class="dropdown-item" href="{{ route('changePassword') }}">
+            {{ __('Change My Password') }}
+        </a>
+
+       
+          </div>
+      </li>
+ @endguest
+    </ul>
+  </div>
+</div>
+</nav>
 
         <main class="py-4">
         <div class="container">
@@ -104,8 +129,6 @@
     </div>
 
     </div>
-   
-
                             <div class="container-fluid">
                                 <footer class="page-footer font-small bg-dark pt-4">
 

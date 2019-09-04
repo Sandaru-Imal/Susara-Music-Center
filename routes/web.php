@@ -12,7 +12,7 @@
 */
 
 // Route::post('/addTutorial', 'lessonController@add');
-Auth::routes(['verify' => true]);
+  Auth::routes(['verify' => true]);
  Route::get('/', 'FrontController@index' )->name('home');
  Route::get('/percution', 'FrontController@percution' )->name('percution');
  Route::get('/percution', [
@@ -81,6 +81,11 @@ Route::get('/register', 'Auth\AdminsRegisterController@showRegisterForm')->name(
 Route::post('/register', 'Auth\AdminsRegisterController@register')->name('admin.register');
 Route::get('/addTutorial', 'AdminController@index')->name('admin.dashboard');
 Route::get('/', 'AdminController@index')->name('admin.dashboard');
+});
+
+Route::prefix('cashier')->group(function(){
+  Route::get('/register', 'Auth\CashierRegisterController@showRegisterForm')->name('cashier.register');
+
 });
 
 

@@ -1,4 +1,5 @@
-@extends('layout.main')
+
+@extends('layouts.app')
 
 @section('content')
     <!--side bar -->
@@ -7,7 +8,7 @@
     </div>
         <div class="container-fluid">
             <div class="row d-flex d-md-block flex-nowrap wrapper">
-                <div class="col-md-2 float-left col-2 pl-0 pr-0 collapse width " id="sidebar" >
+                <!-- <div class="col-md-2 float-left col-2 pl-0 pr-0 collapse width " id="sidebar" >
                         <div class="list-group border-0 card text-center text-md-left">
                         
                             <a href="#menu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar"
@@ -39,7 +40,8 @@
                                     <a href="#" class="list-group-item" data-parent="#menu1sub1">wind</a>
                                     <a href="#menu1sub1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Others
                                     </a>
-                                    <!--If neccassary u can add sub-sub categories here-->
+
+                                    
                                     <div class="collapse" id="menu1sub1sub1">
                                         <a href="#" class="list-group-item" data-parent="#menu1sub1sub1">Subitem </a>
                                         <a href="#" class="list-group-item" data-parent="#menu1sub1sub1">Subitem </a>
@@ -52,12 +54,12 @@
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-book"></i> <span class="d-none d-md-inline">Tutorials</span></a>
                         
                         <a href="{{url('tuner/')}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="d-none d-md-inline">Tuner</span></a>
-                        <!-- <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Message</span></a>
+                        <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Message</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="d-none d-md-inline">Events</span></a>
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Add</span></a>
-                        <a href="{{url("/tuner/")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Add</span></a> -->
+                        <a href="{{url("/tuner/")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Add</span></a>
                        
-                       <!-- Shopping Cart Link-->
+                       
     
                         <a href="{{ route('shop.shoppingCart') }}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar">
                           <i class="fa fa-shopping-cart"></i> Shopping Cart
@@ -79,7 +81,7 @@
 
                         <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-phone"></i> <span class="d-none d-md-inline">Contact Us</span></a>
                     </div>
-                </div>
+                </div> -->
                 <main class="col-md-150 col px-10 pl-md-2 pt-2 main mx-auto">
 
                     <a href="#" data-target="#sidebar" data-toggle="collapse" aria-expanded="false"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
